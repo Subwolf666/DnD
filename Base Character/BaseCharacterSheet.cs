@@ -24,7 +24,7 @@ namespace Base_Character {
         public BaseCharacterAbilities CharacterAbilityModifiers { get; set; }
 
         //public int CharacterInspiration { get; set; }               // Character Inspiration Points
-        //public int CharacterProficiencyBonus { get; set; }          // Character Proficiency Bonus Points
+        public int CharacterProficiencyBonus { get; set; }          // Character Proficiency Bonus Points
         ////
         //public int CharacterSavingThrowsStrength { get; set; }
         //public int CharacterSavingThrowsDexterity { get; set; }
