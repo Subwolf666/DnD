@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DF8A976F-9673-4D56-9D95-627DDB0DFCEE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Base_Character</RootNamespace>
+    <AssemblyName>Base Character</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abilities\AbilityScoresAndModifiers.cs" />
+    <Compile Include="Abilities\BaseCharacterAbilities.cs" />
+    <Compile Include="Abilities\BaseCharacterAbilitiesCleric.cs" />
+    <Compile Include="Abilities\BaseCharacterAbilitiesFighter.cs" />
+    <Compile Include="Abilities\BaseCharacterAbilitiesRogue.cs" />
+    <Compile Include="Abilities\BaseCharacterAbilitiesWizard.cs" />
+    <Compile Include="CharacterStrings.cs" />
+    <Compile Include="Class Proficiency Bonus\ProficiencyClassBonusTableRogue.cs" />
+    <Compile Include="Class Proficiency Bonus\ProficiencyClassBonusTableFighter.cs" />
+    <Compile Include="Classes\BaseCharacterClass.cs" />
+    <Compile Include="Classes\BaseCharacterClassCleric.cs" />
+    <Compile Include="Classes\BaseCharacterClassFighter.cs" />
+    <Compile Include="Classes\BaseCharacterClassRogue.cs" />
+    <Compile Include="Classes\BaseCharacterClassWizard.cs" />
+    <Compile Include="Class Proficiency Bonus\ProficiencyClassBonusTable.cs" />
+    <Compile Include="Class Proficiency Bonus\ProficiencyClassBonusTableWizard.cs" />
+    <Compile Include="Class Proficiency Bonus\ProficiencyClassBonusTableCleric.cs" />
+    <Compile Include="Details\BaseHeightAndWeight.cs" />
+    <Compile Include="Details\BaseHeightAndWeightHighElf.cs" />
+    <Compile Include="Details\BaseHeightAndWeightHillDwarf.cs" />
+    <Compile Include="Details\BaseHeightAndWeightHuman.cs" />
+    <Compile Include="Details\BaseHeightAndWeightLightfootHalfling.cs" />
+    <Compile Include="Details\BaseHeightAndWeightMountainDwarf.cs" />
+    <Compile Include="Details\BaseHeightAndWeightStoutHalfling.cs" />
+    <Compile Include="Details\BaseHeightAndWeightWoodElf.cs" />
+    <Compile Include="Details\CharacterDetailsFunctions.cs" />
+    <Compile Include="Details\Wealth.cs" />
+    <Compile Include="Races\BaseCharacterRace.cs" />
+    <Compile Include="Races\BaseCharacterRaceHighElf.cs" />
+    <Compile Include="Races\BaseCharacterRaceHillDwarf.cs" />
+    <Compile Include="Races\BaseCharacterRaceHuman.cs" />
+    <Compile Include="Races\BaseCharacterRaceLightfootHalfling.cs" />
+    <Compile Include="Races\BaseCharacterRaceMountainDwarf.cs" />
+    <Compile Include="Races\BaseCharacterRaceStoutHalfling.cs" />
+    <Compile Include="Races\BaseCharacterRaceWoodElf.cs" />
+    <Compile Include="BaseCharacterSheet.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Classes\RaceAbilityScoreIncreaseHighElf.cs" />
+    <Compile Include="Classes\RaceAbilityScoreIncreaseHillDwarf.cs" />
+    <Compile Include="Classes\RaceAbilityScoreIncreaseHuman.cs" />
+    <Compile Include="Classes\RaceAbilityScoreIncreaseLightfootHalfling.cs" />
+    <Compile Include="Classes\RaceAbilityScoreIncreaseMountainDwarf.cs" />
+    <Compile Include="Classes\RaceAbilityScoreIncreaseStoutHalfling.cs" />
+    <Compile Include="Classes\RaceAbilityScoreIncreaseWoodElf.cs" />
+    <Compile Include="Skills\BaseSkills.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Base Equipment\Base Equipment.csproj">
+      <Project>{717a73ce-4345-4aa6-9e64-50a81f38e178}</Project>
+      <Name>Base Equipment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{9a6af086-7cdb-46d1-9a2e-f2f38e00344f}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Formulas\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
