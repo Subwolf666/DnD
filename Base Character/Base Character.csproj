@@ -45,6 +45,7 @@
     <Compile Include="Abilities\BaseCharacterAbilitiesFighter.cs" />
     <Compile Include="Abilities\BaseCharacterAbilitiesRogue.cs" />
     <Compile Include="Abilities\BaseCharacterAbilitiesWizard.cs" />
+    <Compile Include="Formulas\CharacterFormulas.cs" />
     <Compile Include="CharacterStrings.cs" />
     <Compile Include="Class Proficiency Bonus\ProficiencyClassBonusTableRogue.cs" />
     <Compile Include="Class Proficiency Bonus\ProficiencyClassBonusTableFighter.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Classes\RaceAbilityScoreIncreaseStoutHalfling.cs" />
     <Compile Include="Classes\RaceAbilityScoreIncreaseWoodElf.cs" />
     <Compile Include="Skills\BaseSkills.cs" />
+    <Compile Include="Wealth\Wealth.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Base Equipment\Base Equipment.csproj">
@@ -95,9 +97,7 @@
       <Name>Utilities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Formulas\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

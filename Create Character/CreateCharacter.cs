@@ -32,6 +32,8 @@ namespace CreateCharacter {
             NameSelection displayName = new NameSelection();
             SexSelection displaySex = new SexSelection();
             BaseCharacterSheet baseCharacter = new BaseCharacterSheet();
+            CharacterFormulas characterFormulas = new CharacterFormulas();
+            Wealth wealthInCP = new Wealth();   // 100 cp = 1 gp
 
             createCharacterStates currentState = createCharacterStates.CHOOSERACE;
             createCharacterStates nextState = createCharacterStates.DONE;
@@ -51,6 +53,7 @@ namespace CreateCharacter {
                         if (baseCharacter.CharacterClass == null) {
                             bExit = true;
                         }
+                        baseCharacter.CharacterProficiencyBonus = baseCharacter.CharacterClass.ProficiencyClassBonus[0].ProficiencyBonus; // First level character always has PB = 2. 
                         nextState = createCharacterStates.CHOOSEHEIGHTANDWEIGHT;
                         break;
                     case createCharacterStates.CHOOSEHEIGHTANDWEIGHT:
@@ -70,7 +73,7 @@ namespace CreateCharacter {
                         nextState = createCharacterStates.CALCULATEMAXIMUMHITPOINTS;
                         break;
                     case createCharacterStates.CALCULATEMAXIMUMHITPOINTS:
-                        baseCharacter.CharacterMaximumHitPoints = baseCharacter.CharacterClass.ClassFeaturesHitPointsHitPointsAt1stLevel + baseCharacter.CharacterAbilityModifiers.Constitution;
+                        baseCharacter.CharacterMaximumHitPoints = characterFormulas.CalcMaximumHitPoints(baseCharacter);
                         baseCharacter.CharacterCurrentHitPoints = baseCharacter.CharacterMaximumHitPoints;
                         nextState = createCharacterStates.CHOOSENAME;
                         break;
@@ -86,14 +89,15 @@ namespace CreateCharacter {
                         if (baseCharacter.CharacterSex == null) {
                             bExit = true;
                         }
-                        nextState = createCharacterStates.DONE;
+                        nextState = createCharacterStates.GOLD;
                         break;
-                    case createCharacterStates.GOLD:
+                    case createCharacterStates.GOLD:    // Base Equipment
                         // add gold to the character
+                        baseCharacter.CharacterGold = wealthInCP.StartingWealthClass(baseCharacter.CharacterClass.ClassType); // (20 * 10) * 100;  // 200 gp = 20000 cp
+                        nextState = createCharacterStates.DONE;
                         break;
                     case createCharacterStates.DONE:
                         baseCharacter.CharacterLevel = 1;   // starting level for new character
-                        //baseCharacter.CharacterGold = ;
                         bDontExitLoop = false;
                         break;
                     default:

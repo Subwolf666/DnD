@@ -9,6 +9,8 @@ using Utilities;
 
 namespace Base_Character {
     public class BaseCharacterClassRogue : BaseCharacterClass {
+        ProficiencyClassBonusTableRogue proficiencyClassBonus = new ProficiencyClassBonusTableRogue();
+
         public BaseCharacterClassRogue() {
 
             ClassType = ClassTypes.ROGUE;
@@ -50,6 +52,7 @@ namespace Base_Character {
 
             ClassFeaturesProficienciesSavingThrow = new AbilityTypes[] { AbilityTypes.DEXTERITY, AbilityTypes.INTELLIGENCE };
             ClassFeaturesProficienciesSkills = new BaseSkill[] { BaseSkill.ACROBATICS, BaseSkill.ATHLETICS, BaseSkill.DECEPTION, BaseSkill.STEALTH };
+            ProficiencyClassBonus = proficiencyClassBonus.PopulateProficiencyClassBonusTableRogue();
         }
     }
 }

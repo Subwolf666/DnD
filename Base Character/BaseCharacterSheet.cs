@@ -23,7 +23,7 @@ namespace Base_Character {
         public BaseCharacterAbilities CharacterAbilityScores { get; set; }
         public BaseCharacterAbilities CharacterAbilityModifiers { get; set; }
 
-        //public int CharacterInspiration { get; set; }               // Character Inspiration Points
+        //public int CharacterInspiration { get; set; }               // Character Inspiration Points, you have to earn in game. dont implement yet or ever!
         public int CharacterProficiencyBonus { get; set; }          // Character Proficiency Bonus Points
         ////
         //public int CharacterSavingThrowsStrength { get; set; }

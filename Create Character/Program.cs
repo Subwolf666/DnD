@@ -42,6 +42,7 @@ namespace CreateCharacter
                 Console.WriteLine("Level: " + newCharacter.CharacterLevel);
                 Console.WriteLine("Race: " + newCharacter.CharacterRace.RaceName);
                 Console.WriteLine("Class: " + newCharacter.CharacterClass.ClassName);
+                Console.WriteLine("Gold: " + newCharacter.CharacterGold);
                 Console.WriteLine("Height: " + newCharacter.CharacterHeightAndWeight.HeightFeet + "\'" + newCharacter.CharacterHeightAndWeight.HeightInches + "\"");
                 Console.WriteLine("Weight: " + newCharacter.CharacterHeightAndWeight.WeightPounds + " lbs");
                 Console.WriteLine("==========================================");
