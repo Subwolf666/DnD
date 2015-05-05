@@ -19,7 +19,15 @@ namespace CreateCharacter
             //Console.TreatControlCAsInput = true;        // Prevent program from ending if CTL+C is pressed.
             CreateNewCharacter pupke = new CreateNewCharacter();
             BaseCharacterSheet newCharacter = new BaseCharacterSheet();
+            var testWeapons = new Weapons().PopulateWeapons();
+            var testArmor = new Armor().PopulateArmor();
 
+            //Weapons newweapon = new Weapons();
+            //newweapon.PopulateWeapons();
+            
+            //Armor newarmor = new Armor();
+            //WeaponCategory[] testWeapons = new WeaponCategory[];
+            //testWeapons = newarmor.PopulateArmor();
             // Introduction of the game
             // Menu:
             //      Create Party

@@ -86,6 +86,7 @@
     <Compile Include="Abilities\RaceAbilityScoreIncreaseStoutHalfling.cs" />
     <Compile Include="Abilities\RaceAbilityScoreIncreaseWoodElf.cs" />
     <Compile Include="Skills\BaseSkills.cs" />
+    <Compile Include="Spells\BaseSpells.cs" />
     <Compile Include="Wealth\Wealth.cs" />
   </ItemGroup>
   <ItemGroup>

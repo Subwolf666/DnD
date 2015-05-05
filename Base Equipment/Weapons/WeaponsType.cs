@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Base_Equipment {
-    public class WeaponType {
+    public class WeaponsType {
 
         public int ID { get; set; }
         public string Name { get; set; }
@@ -16,9 +16,9 @@ namespace Base_Equipment {
         public int Weight { get; set; }
         public Enums.DamagePropertiesTypes[] Properties { get; set; }
 
-        public WeaponType() { }
+        public WeaponsType() { }
 
-        public WeaponType(int id, string name, int cost, string damageDice, Enums.DamageTypes damageType, string damageName, int weight, Enums.DamagePropertiesTypes[] properties) {
+        public WeaponsType(int id, string name, int cost, string damageDice, Enums.DamageTypes damageType, string damageName, int weight, Enums.DamagePropertiesTypes[] properties) {
             ID = id;
             Name = name;
             Cost = cost;

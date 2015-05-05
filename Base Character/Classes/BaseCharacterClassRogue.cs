@@ -18,8 +18,8 @@ namespace Base_Character {
             ClassFeaturesHitPointsHitDice = DiceBag.Dice.D8;
             ClassFeaturesHitPointsHitPointsAt1stLevel = 8; // 8 + Constitution modifier
             ClassFeaturesHitPointsHitPointsAtHigherLevels = 8; // 1d8 (or 5) + your Constitution modifier per cleric level after 1st
-            ClassFeaturesProficienciesArmor = new ArmorTypes[] { ArmorTypes.ARMOR_ID_LIGHTARMOR };
-            ClassFeaturesProficienciesWeapons = new WeaponsTypes[] { WeaponsTypes.WEAPONS_ID_SIMPLEMELEEWEAPONS, WeaponsTypes.WEAPONS_ID_HANDCROSSBOW, WeaponsTypes.WEAPONS_ID_LONGSWORD, WeaponsTypes.WEAPONS_ID_RAPIER, WeaponsTypes.WEAPONS_ID_SHORTSWORD };
+            ClassFeaturesProficienciesArmor = new Base_Equipment.Enums.ArmorTypes[] { Base_Equipment.Enums.ArmorTypes.ARMOR_ID_LIGHTARMOR };
+            ClassFeaturesProficienciesWeapons = new Base_Equipment.Enums.ProficiencyWeaponsTypes[] { Base_Equipment.Enums.ProficiencyWeaponsTypes.WEAPONS_ID_SIMPLEMELEEWEAPONS, Base_Equipment.Enums.ProficiencyWeaponsTypes.WEAPONS_ID_HANDCROSSBOW, Base_Equipment.Enums.ProficiencyWeaponsTypes.WEAPONS_ID_LONGSWORD, Base_Equipment.Enums.ProficiencyWeaponsTypes.WEAPONS_ID_RAPIER, Base_Equipment.Enums.ProficiencyWeaponsTypes.WEAPONS_ID_SHORTSWORD };
             //public BaseTools ClassFeaturesProficienciesTools { get; set; }
             ClassFeaturesProficienciesSavingThrow = new Enums.AbilityTypes[] { Enums.AbilityTypes.DEXTERITY, Enums.AbilityTypes.INTELLIGENCE };
             ClassFeaturesProficienciesSkills = new BaseSkill[] { BaseSkill.ACROBATICS, BaseSkill.ATHLETICS, BaseSkill.DECEPTION, BaseSkill.STEALTH };

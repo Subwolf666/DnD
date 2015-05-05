@@ -40,7 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adventuring Gear\AdventuringGearType.cs" />
-    <Compile Include="Armor\ArmorTable.cs" />
+    <Compile Include="Armor\Armor.cs" />
     <Compile Include="Armor\ArmorType.cs" />
     <Compile Include="Armor\ArmorCategory.cs" />
     <Compile Include="Armor\ArmorShield.cs" />
@@ -56,8 +56,8 @@
     <Compile Include="Weapons\WeaponsSimpleRanged.cs" />
     <Compile Include="Weapons\WeaponsSimpleMelee.cs" />
     <Compile Include="Weapons\WeaponCategory.cs" />
-    <Compile Include="Weapons\WeaponsTable.cs" />
-    <Compile Include="Weapons\WeaponType.cs" />
+    <Compile Include="Weapons\Weapons.cs" />
+    <Compile Include="Weapons\WeaponsType.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tools\" />

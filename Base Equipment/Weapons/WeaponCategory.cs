@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 namespace Base_Equipment {
     public class WeaponCategory {
 
-        public int ID { get; set; }
+        public Enums.WeaponsTypes ID { get; set; }
         public string Category { get; set; }
         public string Description { get; set; }
-        public WeaponType[] WeaponTypes { get; set; }
+        public WeaponsType[] WeaponTypes { get; set; }
 
         public WeaponCategory() { }
 
-        public WeaponCategory(int id, string category, string description, WeaponType[] weaponTypes) {
+        public WeaponCategory(Enums.WeaponsTypes id, string category, string description, WeaponsType[] weaponTypes) {
             ID = id;
             Category = category;
             Description = description;

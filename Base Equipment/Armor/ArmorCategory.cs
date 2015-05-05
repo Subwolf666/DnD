@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Base_Equipment {
     public class ArmorCategory {
 
-        public ArmorTypes ID { get; set; }
+        public Enums.ArmorTypes ID { get; set; }
         public string Category { get; set; }
         public string Description { get; set; }
         public ArmorType[] ArmorTypes { get; set; }
@@ -17,7 +17,7 @@ namespace Base_Equipment {
 
         public ArmorCategory() { }
 
-        public ArmorCategory(ArmorTypes id, string category, string description, ArmorType[] armorTypes, int donning, int doffing) {
+        public ArmorCategory(Enums.ArmorTypes id, string category, string description, ArmorType[] armorTypes, int donning, int doffing) {
             ID = id;
             Category = category;
             Description = description;
