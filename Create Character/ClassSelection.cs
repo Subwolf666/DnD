@@ -29,14 +29,14 @@ namespace CreateCharacter {
 
                 // Display the different classes
 
-                for (int i = 0; i < CharacterStrings.ClassTypeNames.Count; i++) {
-                    Console.WriteLine("[" + (i + 1).ToString() + "]" + " - " + CharacterStrings.ClassTypeNames[i]);
+                for (int i = 0; i < CharacterStrings.ClassTypeText.Count; i++) {
+                    Console.WriteLine("[" + (i + 1).ToString() + "]" + " - " + CharacterStrings.ClassTypeText[i]);
                 }
                 Console.WriteLine();
                 Console.WriteLine("[0] - Exit.");
                 Console.WriteLine();
 
-                keyPress = misc.GetNumberRange(0, CharacterStrings.ClassTypeNames.Count);
+                keyPress = misc.GetNumberRange(0, CharacterStrings.ClassTypeText.Count);
                 Console.Write("Are you sure? [Y/N]: "); // Asks the user to answer with Yes or No.
                 response = misc.GetYOrN();
                 if (response == ConsoleKey.Y) Console.WriteLine("Yes");

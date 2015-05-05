@@ -28,15 +28,15 @@ namespace CreateCharacter {
                 Console.WriteLine("Choose a Race for your Character:");
                 Console.WriteLine();
 
-                for (int i = 0; i < CharacterStrings.RaceTypeNames.Count; i++) { // Display the different races
+                for (int i = 0; i < CharacterStrings.RaceTypeText.Count; i++) { // Display the different races
 
-                    Console.WriteLine("[" + (i + 1).ToString() + "]" + " - " + CharacterStrings.RaceTypeNames[i]);
+                    Console.WriteLine("[" + (i + 1).ToString() + "]" + " - " + CharacterStrings.RaceTypeText[i]);
                 }
                 Console.WriteLine();
                 Console.WriteLine("[0] - Exit.");
                 Console.WriteLine();
 
-                keyPress = misc.GetNumberRange(0, CharacterStrings.RaceTypeNames.Count);
+                keyPress = misc.GetNumberRange(0, CharacterStrings.RaceTypeText.Count);
                 Console.Write("Are you sure? [Y/N]: "); // Asks the user to answer with Yes or No.
                 response = misc.GetYOrN();
                 if (response == ConsoleKey.Y) Console.WriteLine("Yes");

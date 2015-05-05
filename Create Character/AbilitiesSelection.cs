@@ -104,13 +104,13 @@ namespace CreateCharacter {
 
         private BaseCharacterAbilities GetBaseAbilityScoresForSelectedClass(BaseCharacterClass characterClass) {
             BaseCharacterAbilities temp;
-            if (characterClass.ClassType == ClassTypes.FIGHTER) {
+            if (characterClass.ClassType == Enums.ClassTypes.FIGHTER) {
                 temp = new BaseCharacterAbilitiesFighter();
-            } else if (characterClass.ClassType == ClassTypes.CLERIC) {
+            } else if (characterClass.ClassType == Enums.ClassTypes.CLERIC) {
                 temp = new BaseCharacterAbilitiesCleric();
-            } else if (characterClass.ClassType == ClassTypes.ROGUE) {
+            } else if (characterClass.ClassType == Enums.ClassTypes.ROGUE) {
                 temp = new BaseCharacterAbilitiesRogue();
-            } else if (characterClass.ClassType == ClassTypes.WIZARD) {
+            } else if (characterClass.ClassType == Enums.ClassTypes.WIZARD) {
                 temp = new BaseCharacterAbilitiesWizard();
             } else {
                 temp = new BaseCharacterAbilitiesFighter();

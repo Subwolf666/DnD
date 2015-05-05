@@ -98,19 +98,19 @@ namespace CreateCharacter {
 
         public BaseHeightAndWeight GetHeightAndWeightForSelectedRace(BaseCharacterRace characterRace) {
             BaseHeightAndWeight temp;
-            if (characterRace.RaceType == RaceTypes.HUMANS) {
+            if (characterRace.RaceType == Enums.RaceTypes.HUMANS) {
                 temp = new BaseHeightAndWeightHuman();
-            } else if (characterRace.RaceType == RaceTypes.HILLDWARVES) {
+            } else if (characterRace.RaceType == Enums.RaceTypes.HILLDWARVES) {
                 temp = new BaseHeightAndWeightHillDwarf();
-            } else if (characterRace.RaceType == RaceTypes.MOUNTAINDWARVES) {
+            } else if (characterRace.RaceType == Enums.RaceTypes.MOUNTAINDWARVES) {
                 temp = new BaseHeightAndWeightMountainDwarf();
-            } else if (characterRace.RaceType == RaceTypes.HIGHELVES) {
+            } else if (characterRace.RaceType == Enums.RaceTypes.HIGHELVES) {
                 temp = new BaseHeightAndWeightHighElf();
-            } else if (characterRace.RaceType == RaceTypes.WOODELVES) {
+            } else if (characterRace.RaceType == Enums.RaceTypes.WOODELVES) {
                 temp = new BaseHeightAndWeightWoodElf();
-            } else if (characterRace.RaceType == RaceTypes.LIGHTFOOTHALFLINGS) {
+            } else if (characterRace.RaceType == Enums.RaceTypes.LIGHTFOOTHALFLINGS) {
                 temp = new BaseHeightAndWeightLightfootHalfling();
-            } else if (characterRace.RaceType == RaceTypes.STOUTHALFLINGS) {
+            } else if (characterRace.RaceType == Enums.RaceTypes.STOUTHALFLINGS) {
                 temp = new BaseHeightAndWeightStoutHalfling();
             } else {
                 temp = new BaseHeightAndWeightHuman();

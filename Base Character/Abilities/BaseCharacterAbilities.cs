@@ -5,15 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Base_Character {
-    public enum AbilityTypes {
-        STRENGTH,
-        DEXTERITY,
-        CONSTITUTION,
-        INTELLIGENCE,
-        WISDOM,
-        CHARISMA
-    }
-
     public class BaseCharacterAbilities {
         public int Strength { get; set; }
         public int Dexterity { get; set; }
@@ -24,5 +15,13 @@ namespace Base_Character {
 
         public BaseCharacterAbilities() { }
 
+        public BaseCharacterAbilities(int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma) {
+            Strength = strength;
+            Dexterity = dexterity;
+            Constitution = constitution;
+            Intelligence = intelligence;
+            Wisdom = wisdom;
+            Charisma = charisma;
+        }
     }
 }

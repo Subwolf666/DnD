@@ -17,20 +17,20 @@ namespace Base_Character {
 
         }
 
-        public int StartingWealthClass(ClassTypes classType) {
+        public int StartingWealthClass(Enums.ClassTypes classType) {
             int funds;
 
             switch (classType) {
-                case ClassTypes.CLERIC:
+                case Enums.ClassTypes.CLERIC:
                     funds = StartingWealthCleric();
                     break;
-                case ClassTypes.FIGHTER:
+                case Enums.ClassTypes.FIGHTER:
                     funds = StartingWealthFighter();
                     break;
-                case ClassTypes.ROGUE:
+                case Enums.ClassTypes.ROGUE:
                     funds = StartingWealthRogue();
                     break;
-                case ClassTypes.WIZARD:
+                case Enums.ClassTypes.WIZARD:
                     funds = StartingWealthWizard();
                     break;
                 default:

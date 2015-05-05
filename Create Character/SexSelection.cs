@@ -24,22 +24,22 @@ namespace CreateCharacter {
                 Console.WriteLine("Choose your Character Sex:");
                 Console.WriteLine();
 
-                for (int i = 0; i < CharacterStrings.RaceSexNames.Count; i++) { // Display the different sexes
+                for (int i = 0; i < CharacterStrings.RaceSexText.Count; i++) { // Display the different sexes
 
-                    Console.WriteLine("[" + (i + 1).ToString() + "]" + " - " + CharacterStrings.RaceSexNames[i]);
+                    Console.WriteLine("[" + (i + 1).ToString() + "]" + " - " + CharacterStrings.RaceSexText[i]);
                 }
                 Console.WriteLine();
                 Console.WriteLine("[0] - Exit.");
                 Console.WriteLine();
-                keyPress = misc.GetNumberRange(0, CharacterStrings.RaceSexNames.Count);
+                keyPress = misc.GetNumberRange(0, CharacterStrings.RaceSexText.Count);
 
                 Console.Write("Are you sure? [Y/N]: "); // Asks the user to answer with Yes or No.
                 response = misc.GetYOrN();
                 if (response == ConsoleKey.Y) {
                     if (keyPress.Key == ConsoleKey.D0) {
                         sex = null;
-                    } else if (keyPress.Key == ConsoleKey.D1) sex = CharacterStrings.RaceSexNames[0];
-                    else if (keyPress.Key == ConsoleKey.D2) sex = CharacterStrings.RaceSexNames[1];
+                    } else if (keyPress.Key == ConsoleKey.D1) sex = CharacterStrings.RaceSexText[0];
+                    else if (keyPress.Key == ConsoleKey.D2) sex = CharacterStrings.RaceSexText[1];
                     bDontExitLoop = false;
                 }
             } while (bDontExitLoop);

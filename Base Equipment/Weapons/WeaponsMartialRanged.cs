@@ -18,11 +18,11 @@ namespace Base_Equipment {
 
         public WeaponType[] PopulateMartialRangedWeapons() {
             var MartialRangedWeapons = new WeaponType[] {
-                new WeaponType((int)MartialRangedWeaponsTypes.MARTIALRANGEDWEAPON_ID_BLOWGUN,       "Blowgun",        1000, "1",    DamageTypes.PIERCING, "piercing",  1, new PropertiesTypes[] {PropertiesTypes.AMMUNITION25100, PropertiesTypes.LOADING}),
-                new WeaponType((int)MartialRangedWeaponsTypes.MARTIALRANGEDWEAPON_ID_HANDCROSSBOW,  "Hand Crossbow",  7500, "1D6",  DamageTypes.PIERCING, "piercing",  3, new PropertiesTypes[] {PropertiesTypes.AMMUNITION30120, PropertiesTypes.LIGHT, PropertiesTypes.LOADING}),
-                new WeaponType((int)MartialRangedWeaponsTypes.MARTIALRANGEDWEAPON_ID_HEAVYCROSSBOW, "Heavy Crossbow", 5000, "1D10", DamageTypes.PIERCING, "piercing", 18, new PropertiesTypes[] {PropertiesTypes.AMMUNITION100400, PropertiesTypes.HEAVY, PropertiesTypes.LOADING, PropertiesTypes.TWOHANDED}),
-                new WeaponType((int)MartialRangedWeaponsTypes.MARTIALRANGEDWEAPON_ID_LONGBOW,       "Longbow",        5000, "1D8",  DamageTypes.PIERCING, "piercing",  2, new PropertiesTypes[] {PropertiesTypes.AMMUNITION150600, PropertiesTypes.HEAVY, PropertiesTypes.TWOHANDED}),
-                new WeaponType((int)MartialRangedWeaponsTypes.MARTIALRANGEDWEAPON_ID_NET,           "Net",             100, "0",    DamageTypes.NONE,     "",          3, new PropertiesTypes[] {PropertiesTypes.SPECIAL, PropertiesTypes.THROWN515}),
+                new WeaponType((int)MartialRangedWeaponsTypes.MARTIALRANGEDWEAPON_ID_BLOWGUN,       "Blowgun",        1000, "1",    Enums.DamageTypes.PIERCING, "piercing",  1, new Enums.DamagePropertiesTypes[] {Enums.DamagePropertiesTypes.AMMUNITION25100, Enums.DamagePropertiesTypes.LOADING}),
+                new WeaponType((int)MartialRangedWeaponsTypes.MARTIALRANGEDWEAPON_ID_HANDCROSSBOW,  "Hand Crossbow",  7500, "1D6",  Enums.DamageTypes.PIERCING, "piercing",  3, new Enums.DamagePropertiesTypes[] {Enums.DamagePropertiesTypes.AMMUNITION30120, Enums.DamagePropertiesTypes.LIGHT, Enums.DamagePropertiesTypes.LOADING}),
+                new WeaponType((int)MartialRangedWeaponsTypes.MARTIALRANGEDWEAPON_ID_HEAVYCROSSBOW, "Heavy Crossbow", 5000, "1D10", Enums.DamageTypes.PIERCING, "piercing", 18, new Enums.DamagePropertiesTypes[] {Enums.DamagePropertiesTypes.AMMUNITION100400, Enums.DamagePropertiesTypes.HEAVY, Enums.DamagePropertiesTypes.LOADING, Enums.DamagePropertiesTypes.TWOHANDED}),
+                new WeaponType((int)MartialRangedWeaponsTypes.MARTIALRANGEDWEAPON_ID_LONGBOW,       "Longbow",        5000, "1D8",  Enums.DamageTypes.PIERCING, "piercing",  2, new Enums.DamagePropertiesTypes[] {Enums.DamagePropertiesTypes.AMMUNITION150600, Enums.DamagePropertiesTypes.HEAVY, Enums.DamagePropertiesTypes.TWOHANDED}),
+                new WeaponType((int)MartialRangedWeaponsTypes.MARTIALRANGEDWEAPON_ID_NET,           "Net",             100, "0",    Enums.DamageTypes.NONE,     "",          3, new Enums.DamagePropertiesTypes[] {Enums.DamagePropertiesTypes.SPECIAL, Enums.DamagePropertiesTypes.THROWN515}),
             };
             return MartialRangedWeapons;
         }
