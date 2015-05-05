@@ -62,7 +62,8 @@ namespace Turn_Based_StateMachine {
         //   You can forgo moving, taking an action, or doing
         //   anything at all on your turn. If you can’t decide what to
         //   do on your turn, consider taking the Dodge or Ready
-        //   action, as described in “Actions in Combat.”        //
+        //   action, as described in “Actions in Combat.”
+        //
 
 
 
