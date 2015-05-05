@@ -4,10 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//using Base_Abilities;
-using Base_Character;
 using Base_Equipment;
-using Character_Details;
 
 namespace Base_Character {
     public class BaseCharacterSheet {
