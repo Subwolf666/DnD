@@ -65,8 +65,9 @@ namespace Base_Character {
         ////  Successes
         ////  Failures
         //public int CharacterAttacksSpellCasting { get; set; }
-        public int CharacterGold { get; set; }                      // CP, SP, EP, CP, PP
-        //public BaseEquipment CharacterEquipment { get; set; }
+        public CharacterMoney CharacterGold { get; set; }                      // CP, SP, EP, CP, PP
+        public Equiped CharacterEquipedArmorNWeapons { get; set; }
+        //public Inventory CharacterInventory { get; set; }
 
         //public int CharacterPersonalityTraits { get; set; }
         //public int CharacterIdeals { get; set; }
@@ -75,7 +76,7 @@ namespace Base_Character {
         //public int CharacterFeaturesAndTraits { get; set; }
 
         //public int CharacterAge { get; set; }
-        public BaseHeightAndWeight CharacterBaseHeightAndWeight { get; set; }
+        //public BaseHeightAndWeight CharacterBaseHeightAndWeight { get; set; } // niet nodig
         public BaseHeightAndWeight CharacterHeightAndWeight { get; set; }
         //public BaseHeightAndWeight CharacterWeight { get; set; }
         //public int CharacterEyes { get; set; }

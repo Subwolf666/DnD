@@ -50,6 +50,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Enums\Enums.cs" />
+    <Compile Include="EquipmentStrings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Weapons\WeaponsMartialMelee.cs" />
     <Compile Include="Weapons\WeaponsMartialRanged.cs" />

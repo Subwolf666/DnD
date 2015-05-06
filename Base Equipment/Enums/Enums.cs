@@ -7,32 +7,36 @@ using System.Threading.Tasks;
 namespace Base_Equipment {
     public class Enums {
         public enum ShieldsTypes {
+            SHIELD_ID_NONE = 0,
             SHIELD_ID_SHIELD = 1,
         }
         public enum LightArmorTypes {
+            LIGHTARMOR_ID_NONE = 0,
             LIGHTARMOR_ID_PADDED = 1,
             LIGHTARMOR_ID_LEATHER = 2,
             LIGHTARMOR_ID_STUDDEDLEATHER = 3,
         }
         public enum MediumArmorTypes {
+            MEDIUMARMOR_ID_NONE = 0,
             MEDIUMARMOR_ID_HIDE = 1,
             MEDIUMARMOR_ID_CHAINSHIRT = 2,
             MEDIUMARMOR_ID_SCALEMAIL = 3,
             MEDIUMARMOR_ID_BREASTPLATE = 4,
             MEDIUMARMOR_ID_HALFPLATE = 5,
         }
-        public enum HeavyArmorTypes { 
+        public enum HeavyArmorTypes {
+            HEAVYARMOR_ID_NONE = 0,
             HEAVYARMOR_ID_RINGMAIL = 1,
             HEAVYARMOR_ID_CHAINMAIL = 2,
             HEAVYARMOR_ID_SPLINT = 3,
             HEAVYARMOR_ID_PLATE = 4,
         }
         public enum ArmorTypes {
-            ARMOR_ID_NONE = 1,
-            ARMOR_ID_LIGHTARMOR = 2,
-            ARMOR_ID_MEDIUMARMOR = 3,
-            ARMOR_ID_HEAVYARMOR = 4,
-            ARMOR_ID_SHIELD = 5,
+            ARMOR_ID_NONE = 0,
+            ARMOR_ID_LIGHTARMOR = 1,
+            ARMOR_ID_MEDIUMARMOR = 2,
+            ARMOR_ID_HEAVYARMOR = 3,
+            ARMOR_ID_SHIELD = 4,
         }
         public enum DamagePropertiesTypes {
             NONE,

@@ -19,9 +19,12 @@ namespace CreateCharacter
             //Console.TreatControlCAsInput = true;        // Prevent program from ending if CTL+C is pressed.
             CreateNewCharacter pupke = new CreateNewCharacter();
             BaseCharacterSheet newCharacter = new BaseCharacterSheet();
+            var test = Base_Equipment.Enums.WeaponsTypes.WEAPONS_ID_SIMPLEMELEEWEAPONS.ToString();
             var testWeapons = new Weapons().PopulateWeapons();
             var testArmor = new Armor().PopulateArmor();
 
+            List<WeaponCategory> weaponList = new List<WeaponCategory>();
+            weaponList.Add(testWeapons[(int)Base_Equipment.Enums.WeaponsTypes.WEAPONS_ID_SIMPLEMELEEWEAPONS - 1]);
             //Weapons newweapon = new Weapons();
             //newweapon.PopulateWeapons();
             
@@ -50,7 +53,7 @@ namespace CreateCharacter
                 Console.WriteLine("Level: " + newCharacter.CharacterLevel);
                 Console.WriteLine("Race: " + newCharacter.CharacterRace.RaceName);
                 Console.WriteLine("Class: " + newCharacter.CharacterClass.ClassName);
-                Console.WriteLine("Gold: " + newCharacter.CharacterGold);
+                Console.WriteLine("Money: {0} Platinum, {1} Gold, {2} Silver, {3} Copper", newCharacter.CharacterGold.Platinum, newCharacter.CharacterGold.Gold, newCharacter.CharacterGold.Silver, newCharacter.CharacterGold.Copper);
                 Console.WriteLine("Height: " + newCharacter.CharacterHeightAndWeight.HeightFeet + "\'" + newCharacter.CharacterHeightAndWeight.HeightInches + "\"");
                 Console.WriteLine("Weight: " + newCharacter.CharacterHeightAndWeight.WeightPounds + " lbs");
                 Console.WriteLine("==========================================");

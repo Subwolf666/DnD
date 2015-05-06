@@ -5,38 +5,58 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Base_Character {
-    public class Wealth {
+    public struct CharacterMoney {
+        public int Platinum;
+        public int Gold;
+        public int Copper;
+        public int Silver;
 
-        public int pp { get; set; } // Platinum Pieces
-        public int gp { get; set; } // Gold
-        public int ep { get; set; } // Electrum
-        public int sp { get; set; } // Silver
-        public int cp { get; set; } // Copper
+        public void SortCopper() {
+            int copper = this.Copper;
+
+            if (copper >= 1000) {
+                this.Platinum = copper / 1000;
+                copper -= this.Platinum * 1000;
+            }
+            if (copper >= 100) {
+                this.Gold = copper / 100;
+                copper -= this.Gold * 100;
+            }
+            if (copper >= 10) {
+                this.Silver = copper / 10;
+                copper -= this.Silver * 10;
+            }
+            this.Copper = copper;
+        }
+    }
+
+    public class Wealth {
 
         public Wealth() {
 
         }
 
-        public int StartingWealthClass(Enums.ClassTypes classType) {
-            int funds;
+        public CharacterMoney StartingWealthClass(Enums.ClassTypes classType) {
+            CharacterMoney funds = new CharacterMoney();
 
             switch (classType) {
                 case Enums.ClassTypes.CLERIC:
-                    funds = StartingWealthCleric();
+                    funds.Copper = StartingWealthCleric();
                     break;
                 case Enums.ClassTypes.FIGHTER:
-                    funds = StartingWealthFighter();
+                    funds.Copper = StartingWealthFighter();
                     break;
                 case Enums.ClassTypes.ROGUE:
-                    funds = StartingWealthRogue();
+                    funds.Copper = StartingWealthRogue();
                     break;
                 case Enums.ClassTypes.WIZARD:
-                    funds = StartingWealthWizard();
+                    funds.Copper = StartingWealthWizard();
                     break;
                 default:
-                    funds = -1; // No funds...
+                    funds.Copper = -1; // No funds...
                     break;
             }
+            funds.SortCopper();
             return funds;
         }
 

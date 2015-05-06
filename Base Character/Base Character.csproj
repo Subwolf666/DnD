@@ -46,6 +46,7 @@
     <Compile Include="Abilities\BaseCharacterAbilitiesRogue.cs" />
     <Compile Include="Abilities\BaseCharacterAbilitiesWizard.cs" />
     <Compile Include="Enums\Enums.cs" />
+    <Compile Include="Equiped\Equiped.cs" />
     <Compile Include="Formulas\CharacterFormulas.cs" />
     <Compile Include="CharacterStrings.cs" />
     <Compile Include="Class Proficiency Bonus\ProficiencyClassBonusRogue..cs" />

@@ -17,7 +17,8 @@ namespace CreateCharacter {
             CALCULATEMAXIMUMHITPOINTS,
             CHOOSENAME,
             CHOOSESEX,                        
-            GOLD,
+            MONEY,
+            EQUIPINGARMORANDWEAPONS,
             DONE
         }
 
@@ -57,7 +58,7 @@ namespace CreateCharacter {
                         nextState = createCharacterStates.CHOOSEHEIGHTANDWEIGHT;
                         break;
                     case createCharacterStates.CHOOSEHEIGHTANDWEIGHT:
-                        baseCharacter.CharacterBaseHeightAndWeight = displayHeightAndWeight.GetHeightAndWeightForSelectedRace(baseCharacter.CharacterRace);
+                        //baseCharacter.CharacterBaseHeightAndWeight = displayHeightAndWeight.GetHeightAndWeightForSelectedRace(baseCharacter.CharacterRace);
                         baseCharacter.CharacterHeightAndWeight = displayHeightAndWeight.DisplayHeightAndWeightSelection(baseCharacter.CharacterRace);
                         if (baseCharacter.CharacterHeightAndWeight == null) {
                             bExit = true;
@@ -89,11 +90,15 @@ namespace CreateCharacter {
                         if (baseCharacter.CharacterSex == null) {
                             bExit = true;
                         }
-                        nextState = createCharacterStates.GOLD;
+                        nextState = createCharacterStates.MONEY;
                         break;
-                    case createCharacterStates.GOLD:    // Base Equipment
-                        // add gold to the character
-                        baseCharacter.CharacterGold = wealthInCP.StartingWealthClass(baseCharacter.CharacterClass.ClassType); // (20 * 10) * 100;  // 200 gp = 20000 cp
+                    case createCharacterStates.MONEY:    // Base Equipment
+                        baseCharacter.CharacterGold = wealthInCP.StartingWealthClass(baseCharacter.CharacterClass.ClassType);
+                        nextState = createCharacterStates.EQUIPINGARMORANDWEAPONS;
+                        break;
+                    case createCharacterStates.EQUIPINGARMORANDWEAPONS:
+                        var kut = new Equiped();
+                        baseCharacter.CharacterEquipedArmorNWeapons = kut.EquipWeaponsAndArmor(baseCharacter.CharacterClass);
                         nextState = createCharacterStates.DONE;
                         break;
                     case createCharacterStates.DONE:
