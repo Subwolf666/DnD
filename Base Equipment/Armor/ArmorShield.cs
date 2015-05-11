@@ -11,7 +11,7 @@ namespace Base_Equipment {
 
         public ArmorType[] PopulateShields() {
             var Shields = new ArmorType[] {
-                new ArmorType((int)Enums.ShieldsTypes.SHIELD_ID_SHIELD, "Shield", string.Empty, 1000, 2, null, null, 6),
+                //new ArmorType((int)Enums.ShieldsTypes.SHIELD_ID_SHIELD, "Shield", string.Empty, 1000, 2, null, null, 6),
             };
             return Shields;
         }

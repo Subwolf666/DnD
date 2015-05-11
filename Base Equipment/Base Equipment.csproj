@@ -42,14 +42,7 @@
     <Compile Include="Adventuring Gear\AdventuringGearType.cs" />
     <Compile Include="Armor\Armor.cs" />
     <Compile Include="Armor\ArmorType.cs" />
-    <Compile Include="Armor\ArmorCategory.cs" />
-    <Compile Include="Armor\ArmorShield.cs" />
-    <Compile Include="Armor\ArmorLight.cs" />
-    <Compile Include="Armor\ArmorHeavy.cs" />
-    <Compile Include="Armor\ArmorMedium.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="BaseEquipmentType.cs" />
+    <Compile Include="BaseEquipment.cs" />
     <Compile Include="Enums\Enums.cs" />
     <Compile Include="EquipmentStrings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

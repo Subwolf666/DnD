@@ -78,8 +78,10 @@ namespace CreateCharacter {
                     case createCharacterStates.EQUIPINGARMORANDWEAPONS:
                         //Armor testArmor = new Armor();
 //                        List<BaseEquipmentType> Inventory = new List<BaseEquipmentType>();
+                        var hoer = Armor.PopulateArmor();
+                        var prostitute = Weapons.PopulateWeapons();
                         Inventory inventory = new Inventory(12);
-                        inventory.AddItem(new ArmorType((int)Enums.LightArmorTypes.LIGHTARMOR_ID_STUDDEDLEATHER, "Padded", " Made from tough but flexible leather, studded leather is reinforced with close-set rivets or spikes.", 4500, 11, null, null, 13));
+                        //inventory.AddItem(new ArmorType((int)Enums.LightArmorTypes.LIGHTARMOR_ID_STUDDEDLEATHER, "Padded", " Made from tough but flexible leather, studded leather is reinforced with close-set rivets or spikes.", 4500, 11, null, null, 13));
                         //baseCharacter.EquipedArmor = kutje[(int)Enums.HeavyArmorTypes.HEAVYARMOR_ID_PLATE - 1].ArmorTypes[(int)Enums.HeavyArmorTypes.HEAVYARMOR_ID_PLATE - 1];
 
 

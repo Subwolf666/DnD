@@ -46,6 +46,7 @@
     <Compile Include="Abilities\AbilitiesWizard.cs" />
     <Compile Include="Enums\Enums.cs" />
     <Compile Include="Formulas\CharacterFormulas.cs" />
+    <Compile Include="Inventory\Inventory.cs" />
     <Compile Include="StringFunctions.cs" />
     <Compile Include="Class Proficiency Bonus\ProficiencyClassBonusRogue..cs" />
     <Compile Include="Class Proficiency Bonus\ProficiencyClassBonusFighter.cs" />
