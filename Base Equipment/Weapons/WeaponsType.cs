@@ -11,7 +11,7 @@ namespace Base_Equipment {
         public string DamageName { get; set; }
         public Enums.DamagePropertiesTypes[] Properties { get; set; }
 
-        public WeaponsType(Enums.EquipmentTypes id, string name, int cost, string damageDice, Enums.DamageTypes damageType, string damageName, int weight, Enums.DamagePropertiesTypes[] properties) : base(id, name, cost, weight) {
+        public WeaponsType(int id, string name, int cost, string damageDice, Enums.DamageTypes damageType, string damageName, int weight, Enums.DamagePropertiesTypes[] properties) : base(id, name, cost, weight) {
             DamageDice = damageDice;
             DamageType = damageType;
             DamageName = damageName;

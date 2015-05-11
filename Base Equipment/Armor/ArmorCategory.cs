@@ -6,22 +6,20 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Base_Equipment {
-    public class ArmorCategory : ArmorType {
+    public class ArmorCategory {
 
-        public Enums.EquipmentTypes ID { get; set; }
+        public int CatID { get; set; }
         public string Category { get; set; }
         public string Description { get; set; }
-        //public ArmorType[] ArmorTypes { get; set; }
+        public ArmorType[] ArmorTypes { get; set; }
         public int Donning { get; set; }
         public int Doffing { get; set; }
 
-        //public ArmorCategory() { }
-
-        public ArmorCategory(Enums.EquipmentTypes id, string category, string description, ArmorType[] armorTypes, int donning, int doffing) : base(armorTypes) {
-            ID = id;
+        public ArmorCategory(int catid, string category, string description, ArmorType[] armorTypes, int donning, int doffing) {
+            CatID = catid;
             Category = category;
             Description = description;
-            //ArmorTypes = armorTypes;
+            ArmorTypes = armorTypes;
             Donning = donning;
             Doffing = doffing;
         }

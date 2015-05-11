@@ -67,9 +67,10 @@ namespace Base_Character {
         //public int CharacterAttacksSpellCasting { get; set; }
         public CharacterMoney CharacterGold { get; set; }                      // CP, SP, EP, CP, PP
         // Equiped Armor, Weapon and or Shield
-        public Base_Equipment.ArmorType EquipedArmor { get; set; }
-        public Base_Equipment.WeaponsType EquipedWeapon { get; set; }
-        public Base_Equipment.ArmorType EquipedShield { get; set; }
+        //public Base_Equipment.ArmorType EquipedArmor { get; set; }
+        public Base_Equipment.BaseEquipment EquipedArmor { get; set; }
+        public Base_Equipment.BaseEquipment EquipedWeapon { get; set; }
+        public Base_Equipment.BaseEquipment EquipedShield { get; set; }
 
         //public Equiped CharacterEquipedArmorNWeapons { get; set; }
         //public Inventory CharacterInventory { get; set; }

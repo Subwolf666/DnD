@@ -6,75 +6,71 @@ using System.Threading.Tasks;
 
 namespace Base_Equipment {
     public class Enums {
+        public static readonly int EQUIPMENT_ID_NONE = 0;
+        public static readonly int SHIELD_ID = 1000;
+        public static readonly int SHIELD_ID_SHIELD = 1001;
+
+        public static readonly int LIGHTARMOR_ID = 2000;
+        public static readonly int LIGHTARMOR_ID_PADDED = 2001;
+        public static readonly int LIGHTARMOR_ID_LEATHER = 2002;
+        public static readonly int LIGHTARMOR_ID_STUDDEDLEATHER = 2003;
+
+        public static readonly int MEDIUMARMOR_ID = 3000;
+        public static readonly int MEDIUMARMOR_ID_HIDE = 3001;
+        public static readonly int MEDIUMARMOR_ID_CHAINSHIRT = 3002;
+        public static readonly int MEDIUMARMOR_ID_SCALEMAIL = 3003;
+        public static readonly int MEDIUMARMOR_ID_BREASTPLATE = 3004;
+        public static readonly int MEDIUMARMOR_ID_HALFPLATE = 3005;
+
+        public static readonly int HEAVYARMOR_ID = 4000;
+        public static readonly int HEAVYARMOR_ID_RINGMAIL = 4001;
+        public static readonly int HEAVYARMOR_ID_CHAINMAIL = 4002;
+        public static readonly int HEAVYARMOR_ID_SPLINT = 4003;
+        public static readonly int HEAVYARMOR_ID_PLATE = 4004;
+
+        public static readonly int SIMPLEMELEEWEAPON_ID_CLUB = 10000;
+        public static readonly int SIMPLEMELEEWEAPON_ID_DAGGER = 10002;
+        public static readonly int SIMPLEMELEEWEAPON_ID_GREATCLUB = 10003;
+        public static readonly int SIMPLEMELEEWEAPON_ID_HANDAXE = 10004;
+        public static readonly int SIMPLEMELEEWEAPON_ID_JAVELIN = 10005;
+        public static readonly int SIMPLEMELEEWEAPON_ID_LIGHTHAMMER = 10006;
+        public static readonly int SIMPLEMELEEWEAPON_ID_MACE = 10007;
+        public static readonly int SIMPLEMELEEWEAPON_ID_QUARTERSTAFF = 10008;
+        public static readonly int SIMPLEMELEEWEAPON_ID_SICKLE = 10009;
+        public static readonly int SIMPLEMELEEWEAPON_ID_SPEAR = 10010;
+        public static readonly int SIMPLEMELEEWEAPON_ID_UNARMEDSTRIKE = 10011;
+
+        public static readonly int SIMPLERANGEDWEAPON_ID_LIGHTCROSSBOW = 11001;
+        public static readonly int SIMPLERANGEDWEAPON_ID_DART = 11002;
+        public static readonly int SIMPLERANGEDWEAPON_ID_SHORTBOW = 11003;
+        public static readonly int SIMPLERANGEDWEAPON_ID_SLING = 11004;
+
+        public static readonly int MARTIALMELEEWEAPON_ID_BATTLEAXE = 12001;
+        public static readonly int MARTIALMELEEWEAPON_ID_FLAIL = 12002;
+        public static readonly int MARTIALMELEEWEAPON_ID_GLAIVE = 12003;
+        public static readonly int MARTIALMELEEWEAPON_ID_GREATAXE = 12004;
+        public static readonly int MARTIALMELEEWEAPON_ID_GREATSWORD = 12005;
+        public static readonly int MARTIALMELEEWEAPON_ID_HALBERD = 12006;
+        public static readonly int MARTIALMELEEWEAPON_ID_LANCE = 12007;
+        public static readonly int MARTIALMELEEWEAPON_ID_LONGSWORD = 12008;
+        public static readonly int MARTIALMELEEWEAPON_ID_MAUL = 12009;
+        public static readonly int MARTIALMELEEWEAPON_ID_MORNINGSTAR = 12010;
+        public static readonly int MARTIALMELEEWEAPON_ID_PIKE = 12011;
+        public static readonly int MARTIALMELEEWEAPON_ID_RAPIER = 12012;
+        public static readonly int MARTIALMELEEWEAPON_ID_SCIMITAR = 12013;
+        public static readonly int MARTIALMELEEWEAPON_ID_SHORTSWORD = 12014;
+        public static readonly int MARTIALMELEEWEAPON_ID_TRIDENT = 12015;
+        public static readonly int MARTIALMELEEWEAPON_ID_WARPICK = 12016;
+        public static readonly int MARTIALMELEEWEAPON_ID_WARHAMMER = 12017;
+        public static readonly int MARTIALMELEEWEAPON_ID_WHIP = 12018;
+
+        public static readonly int MARTIALRANGEDWEAPON_ID_BLOWGUN = 13001;
+        public static readonly int MARTIALRANGEDWEAPON_ID_HANDCROSSBOW = 13002;
+        public static readonly int MARTIALRANGEDWEAPON_ID_HEAVYCROSSBOW = 13003;
+        public static readonly int MARTIALRANGEDWEAPON_ID_LONGBOW = 13004;
+        public static readonly int MARTIALRANGEDWEAPON_ID_NET = 13005;
 
 
-        // new setup of equipment ID's
-        public enum EquipmentTypes {
-            EQUIPMENT_ID_NONE = 0,
-            SHIELD_ID = 1000,
-            SHIELD_ID_SHIELD = 1001,
-
-            LIGHTARMOR_ID = 2000,
-            LIGHTARMOR_ID_PADDED = 2001,
-            LIGHTARMOR_ID_LEATHER = 2002,
-            LIGHTARMOR_ID_STUDDEDLEATHER = 2003,
-
-            MEDIUMARMOR_ID = 3000,
-            MEDIUMARMOR_ID_HIDE = 3001,
-            MEDIUMARMOR_ID_CHAINSHIRT = 3002,
-            MEDIUMARMOR_ID_SCALEMAIL = 3003,
-            MEDIUMARMOR_ID_BREASTPLATE = 3004,
-            MEDIUMARMOR_ID_HALFPLATE = 3005,
-
-            HEAVYARMOR_ID = 4000,
-            HEAVYARMOR_ID_RINGMAIL = 4001,
-            HEAVYARMOR_ID_CHAINMAIL = 4002,
-            HEAVYARMOR_ID_SPLINT = 4003,
-            HEAVYARMOR_ID_PLATE = 4004,
-
-            SIMPLEMELEEWEAPON_ID_CLUB = 10000,
-            SIMPLEMELEEWEAPON_ID_DAGGER = 10002,
-            SIMPLEMELEEWEAPON_ID_GREATCLUB = 10003,
-            SIMPLEMELEEWEAPON_ID_HANDAXE = 10004,
-            SIMPLEMELEEWEAPON_ID_JAVELIN = 10005,
-            SIMPLEMELEEWEAPON_ID_LIGHTHAMMER = 10006,
-            SIMPLEMELEEWEAPON_ID_MACE = 10007,
-            SIMPLEMELEEWEAPON_ID_QUARTERSTAFF = 10008,
-            SIMPLEMELEEWEAPON_ID_SICKLE = 10009,
-            SIMPLEMELEEWEAPON_ID_SPEAR = 10010,
-            SIMPLEMELEEWEAPON_ID_UNARMEDSTRIKE = 10011,
-
-            SIMPLERANGEDWEAPON_ID_LIGHTCROSSBOW = 11001,
-            SIMPLERANGEDWEAPON_ID_DART = 11002,
-            SIMPLERANGEDWEAPON_ID_SHORTBOW = 11003,
-            SIMPLERANGEDWEAPON_ID_SLING = 11004,
-
-            MARTIALMELEEWEAPON_ID_BATTLEAXE = 12001,
-            MARTIALMELEEWEAPON_ID_FLAIL = 12002,
-            MARTIALMELEEWEAPON_ID_GLAIVE = 12003,
-            MARTIALMELEEWEAPON_ID_GREATAXE = 12004,
-            MARTIALMELEEWEAPON_ID_GREATSWORD = 12005,
-            MARTIALMELEEWEAPON_ID_HALBERD = 12006,
-            MARTIALMELEEWEAPON_ID_LANCE = 12007,
-            MARTIALMELEEWEAPON_ID_LONGSWORD = 12008,
-            MARTIALMELEEWEAPON_ID_MAUL = 12009,
-            MARTIALMELEEWEAPON_ID_MORNINGSTAR = 12010,
-            MARTIALMELEEWEAPON_ID_PIKE = 12011,
-            MARTIALMELEEWEAPON_ID_RAPIER = 12012,
-            MARTIALMELEEWEAPON_ID_SCIMITAR = 12013,
-            MARTIALMELEEWEAPON_ID_SHORTSWORD = 12014,
-            MARTIALMELEEWEAPON_ID_TRIDENT = 12015,
-            MARTIALMELEEWEAPON_ID_WARPICK = 12016,
-            MARTIALMELEEWEAPON_ID_WARHAMMER = 12017,
-            MARTIALMELEEWEAPON_ID_WHIP = 12018,
-
-            MARTIALRANGEDWEAPON_ID_BLOWGUN = 13001,
-            MARTIALRANGEDWEAPON_ID_HANDCROSSBOW = 13002,
-            MARTIALRANGEDWEAPON_ID_HEAVYCROSSBOW = 13003,
-            MARTIALRANGEDWEAPON_ID_LONGBOW = 13004,
-            MARTIALRANGEDWEAPON_ID_NET = 13005,
-
-        }
 
         //public enum ShieldsTypes {
         //    SHIELD_ID_NONE = 0,

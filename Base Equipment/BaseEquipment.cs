@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 namespace Base_Equipment {
     public class BaseEquipment {
 
-        public Enums.EquipmentTypes ID { get; set; }
+        public int ID { get; set; }
         public string Name { get; set; }
         public int Cost { get; set; }
         public int Weight { get; set; }
 
-        public BaseEquipment(Enums.EquipmentTypes id, string name, int cost, int weight) {
+        public BaseEquipment(int id, string name, int cost, int weight) {
             ID = id;
             Name = name;
             Cost = cost;

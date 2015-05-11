@@ -12,7 +12,7 @@ namespace Base_Equipment {
         public string Strength { get; set; }
         public string Stealth { get; set; }
 
-        public ArmorType(Enums.EquipmentTypes id, string name, string description, int cost, int armorClass, string strength, string stealth, int weight) : base(id, name, cost, weight) {
+        public ArmorType(int id, string name, string description, int cost, int armorClass, string strength, string stealth, int weight) : base(id, name, cost, weight) {
             Description = description;
             ArmorClass = armorClass;
             Strength = strength;

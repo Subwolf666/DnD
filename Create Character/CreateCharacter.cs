@@ -76,15 +76,22 @@ namespace CreateCharacter {
                         nextState = createCharacterStates.EQUIPINGARMORANDWEAPONS;
                         break;
                     case createCharacterStates.EQUIPINGARMORANDWEAPONS:
-                        //Armor testArmor = new Armor();
-//                        List<BaseEquipmentType> Inventory = new List<BaseEquipmentType>();
-                        var hoer = Armor.PopulateArmor();
-                        var prostitute = Weapons.PopulateWeapons();
-                        Inventory inventory = new Inventory(12);
-                        //inventory.AddItem(new ArmorType((int)Enums.LightArmorTypes.LIGHTARMOR_ID_STUDDEDLEATHER, "Padded", " Made from tough but flexible leather, studded leather is reinforced with close-set rivets or spikes.", 4500, 11, null, null, 13));
-                        //baseCharacter.EquipedArmor = kutje[(int)Enums.HeavyArmorTypes.HEAVYARMOR_ID_PLATE - 1].ArmorTypes[(int)Enums.HeavyArmorTypes.HEAVYARMOR_ID_PLATE - 1];
-
-
+                        var armor = Armor.ArmorList;
+                        var weapons = Weapons.WeaponsList;
+                        Inventory inventory = new Inventory(52);
+                        foreach (var armortype in armor) {
+                            inventory.AddItem(armortype);
+                            if (armortype.ID == Enums.MEDIUMARMOR_ID_CHAINSHIRT) {
+                                baseCharacter.EquipedArmor = armortype;
+                            }
+                        }
+                        foreach (var weapontype in weapons) {
+                            inventory.AddItem(weapontype);
+                            if (weapontype.ID == Enums.MARTIALMELEEWEAPON_ID_GREATSWORD) {
+                                baseCharacter.EquipedWeapon = weapontype;
+                            }
+                        }
+                        // make function to get an armor_id_ARMORTYPE (eg HEAVYARMOR_ID_CHAINMAIL)
                         nextState = createCharacterStates.DONE;
                         break;
                     case createCharacterStates.DONE:

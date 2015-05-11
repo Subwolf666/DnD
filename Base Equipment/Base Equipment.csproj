@@ -41,6 +41,9 @@
   <ItemGroup>
     <Compile Include="Adventuring Gear\AdventuringGearType.cs" />
     <Compile Include="Armor\Armor.cs" />
+    <Compile Include="Armor\ArmorCategory.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Armor\ArmorType.cs" />
     <Compile Include="BaseEquipment.cs" />
     <Compile Include="Enums\Enums.cs" />
