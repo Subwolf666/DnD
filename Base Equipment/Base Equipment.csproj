@@ -49,6 +49,7 @@
     <Compile Include="Armor\ArmorMedium.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="BaseEquipmentType.cs" />
     <Compile Include="Enums\Enums.cs" />
     <Compile Include="EquipmentStrings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -14,23 +14,10 @@ namespace CreateCharacter
     {
         static void Main(string[] args)
         {
-            // Variables
             ConsoleKeyInfo cki;
-            //Console.TreatControlCAsInput = true;        // Prevent program from ending if CTL+C is pressed.
-            CreateNewCharacter pupke = new CreateNewCharacter();
+            Console.TreatControlCAsInput = true;        // Prevent program from ending if CTL+C is pressed.
             BaseCharacterSheet newCharacter = new BaseCharacterSheet();
-            var test = Base_Equipment.Enums.WeaponsTypes.WEAPONS_ID_SIMPLEMELEEWEAPONS.ToString();
-            var testWeapons = new Weapons().PopulateWeapons();
-            var testArmor = new Armor().PopulateArmor();
 
-            List<WeaponCategory> weaponList = new List<WeaponCategory>();
-            weaponList.Add(testWeapons[(int)Base_Equipment.Enums.WeaponsTypes.WEAPONS_ID_SIMPLEMELEEWEAPONS - 1]);
-            //Weapons newweapon = new Weapons();
-            //newweapon.PopulateWeapons();
-            
-            //Armor newarmor = new Armor();
-            //WeaponCategory[] testWeapons = new WeaponCategory[];
-            //testWeapons = newarmor.PopulateArmor();
             // Introduction of the game
             // Menu:
             //      Create Party
@@ -44,15 +31,15 @@ namespace CreateCharacter
             //
             //      Exit game
             //
-            newCharacter = pupke.CreateANewCharacter();
+            newCharacter = CreateNewCharacter.CreateANewCharacter();
             if (newCharacter != null) {
                 Console.Clear();
                 Console.WriteLine();
                 Console.WriteLine("Name: " + newCharacter.CharacterName);
-                Console.WriteLine("Sex: " + newCharacter.CharacterSex);
+                Console.WriteLine("Sex: " + newCharacter.Gender);
                 Console.WriteLine("Level: " + newCharacter.CharacterLevel);
-                Console.WriteLine("Race: " + newCharacter.CharacterRace.RaceName);
-                Console.WriteLine("Class: " + newCharacter.CharacterClass.ClassName);
+                Console.WriteLine("Race: " + StringFunctions.RaceTypeText[(int)newCharacter.CharacterRace.Name]);
+                Console.WriteLine("Class: " + newCharacter.CharacterClass.Name);
                 Console.WriteLine("Money: {0} Platinum, {1} Gold, {2} Silver, {3} Copper", newCharacter.CharacterGold.Platinum, newCharacter.CharacterGold.Gold, newCharacter.CharacterGold.Silver, newCharacter.CharacterGold.Copper);
                 Console.WriteLine("Height: " + newCharacter.CharacterHeightAndWeight.HeightFeet + "\'" + newCharacter.CharacterHeightAndWeight.HeightInches + "\"");
                 Console.WriteLine("Weight: " + newCharacter.CharacterHeightAndWeight.WeightPounds + " lbs");
@@ -75,3 +62,15 @@ namespace CreateCharacter
         }
     }
 }
+//var test = Base_Equipment.Enums.WeaponsTypes.WEAPONS_ID_SIMPLEMELEEWEAPONS.ToString();
+//var testWeapons = new Weapons().PopulateWeapons();
+//var testArmor = new Armor().PopulateArmor();
+
+//List<WeaponCategory> weaponList = new List<WeaponCategory>();
+//weaponList.Add(testWeapons[(int)Base_Equipment.Enums.WeaponsTypes.WEAPONS_ID_SIMPLEMELEEWEAPONS - 1]);
+////Weapons newweapon = new Weapons();
+////newweapon.PopulateWeapons();
+
+////Armor newarmor = new Armor();
+////WeaponCategory[] testWeapons = new WeaponCategory[];
+////testWeapons = newarmor.PopulateArmor();

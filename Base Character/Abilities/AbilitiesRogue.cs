@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Base_Character {
-    public class BaseCharacterAbilitiesRogue : BaseCharacterAbilities {
-        public BaseCharacterAbilitiesRogue() {
+    public class AbilitiesRogue : Abilities {
+        public AbilitiesRogue() {
 
             Strength = 10;
             Dexterity = 15;

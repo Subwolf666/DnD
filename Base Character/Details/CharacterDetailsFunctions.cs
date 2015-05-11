@@ -5,11 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Base_Character {
-    public enum SexTypes {
-        FEMALE,
-        MALE
-    }
-
     public class CharacterDetailsFunctions {
         public static bool ValidateCharacterName(string name) {
             if (string.IsNullOrEmpty(name) || name.Length > 15) {

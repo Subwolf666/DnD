@@ -5,15 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Base_Equipment {
-    public class WeaponsType {
+    public class WeaponsType : BaseEquipmentType {
 
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public int Cost { get; set; }
+        //public int ID { get; set; }
+        //public string Name { get; set; }
+        //public int Cost { get; set; }
         public string DamageDice { get; set; }
         public Enums.DamageTypes DamageType { get; set; }
         public string DamageName { get; set; }
-        public int Weight { get; set; }
+        //public int Weight { get; set; }
         public Enums.DamagePropertiesTypes[] Properties { get; set; }
 
         public WeaponsType() { }

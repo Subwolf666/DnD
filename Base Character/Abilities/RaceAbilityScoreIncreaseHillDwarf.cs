@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Base_Character {
-    public class RaceAbilityScoreIncreaseHillDwarf : BaseCharacterAbilities {
+    public class RaceAbilityScoreIncreaseHillDwarf : Abilities {
         public RaceAbilityScoreIncreaseHillDwarf() {
             Strength = 0;
             Dexterity = 0;

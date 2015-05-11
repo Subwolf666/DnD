@@ -9,13 +9,10 @@ using Misc;
 
 namespace CreateCharacter {
     public class NameSelection {
-        public string DisplayNameSelection() {
-            ConsoleKey response; // Creates a variable to hold the user's return response.
-            Console.TreatControlCAsInput = true;    // Prevent program from ending if CTL+C is pressed.
+        public static string DisplayNameSelection() {
             bool bDontExitLoop = true;
-            Misc.Miscellaneous misc = new Misc.Miscellaneous();
+            string name = string.Empty;
 
-            string name;
             do {
                 Console.Clear();
                 Console.WriteLine("Name Selection:");
@@ -29,14 +26,7 @@ namespace CreateCharacter {
                 Console.TreatControlCAsInput = true;
 
                 // check if the name is within the rules: only char and not numbers or spaces
-                if (CharacterDetailsFunctions.ValidateCharacterName(name)) {
-                    // check if player is ok with name.
-                    Console.Write("Are you sure? [Y/N]: "); // Asks the user to answer with Yes or No.
-                    response = misc.GetYOrN();
-                    if (response == ConsoleKey.Y) {
-                        bDontExitLoop = false;
-                    }
-                }
+                bDontExitLoop = !CharacterDetailsFunctions.ValidateCharacterName(name);
             } while (bDontExitLoop);
 
             return name;

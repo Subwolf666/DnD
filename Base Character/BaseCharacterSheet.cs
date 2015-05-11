@@ -10,15 +10,15 @@ namespace Base_Character {
     public class BaseCharacterSheet {
 
         public string CharacterName { get; set; }                   // Character Name
-        public int CharacterLevel { get; set; }                  // Character Level
-        public string CharacterSex { get; set; }                  // Character Sex
-        public BaseCharacterRace CharacterRace { get; set; }        // Character Race
-        public BaseCharacterClass CharacterClass { get; set; }      // Character Class
+        public int CharacterLevel { get; set; }                      // Character Level
+        public GenderTypes Gender { get; set; }                     // Character Gender
+        public Races CharacterRace { get; set; }                     // Character Race
+        public Classes CharacterClass { get; set; }      // Character Class
         public int CharacterAlignment { get; set; }              // Character Alignment maybe an int
         public int CharacterExperiencePoints { get; set; }          // Character Experience Points
 
-        public BaseCharacterAbilities CharacterAbilityScores { get; set; }
-        public BaseCharacterAbilities CharacterAbilityModifiers { get; set; }
+        public Abilities CharacterAbilityScores { get; set; }
+        public Abilities CharacterAbilityModifiers { get; set; }
 
         //public int CharacterInspiration { get; set; }               // Character Inspiration Points, you have to earn in game. dont implement yet or ever!
         public int CharacterProficiencyBonus { get; set; }          // Character Proficiency Bonus Points
@@ -66,7 +66,12 @@ namespace Base_Character {
         ////  Failures
         //public int CharacterAttacksSpellCasting { get; set; }
         public CharacterMoney CharacterGold { get; set; }                      // CP, SP, EP, CP, PP
-        public Equiped CharacterEquipedArmorNWeapons { get; set; }
+        // Equiped Armor, Weapon and or Shield
+        public Base_Equipment.ArmorType EquipedArmor { get; set; }
+        public Base_Equipment.WeaponsType EquipedWeapon { get; set; }
+        public Base_Equipment.ArmorType EquipedShield { get; set; }
+
+        //public Equiped CharacterEquipedArmorNWeapons { get; set; }
         //public Inventory CharacterInventory { get; set; }
 
         //public int CharacterPersonalityTraits { get; set; }

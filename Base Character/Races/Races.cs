@@ -5,27 +5,23 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Base_Character {
-    public class BaseCharacterRace {
+    public class Races {
 
-        public string RaceName { get; set; }
-        public Enums.RaceTypes RaceType { get; set; }
+        public RaceTypes Name { get; set; }
         public string RaceDescription { get; set; }
-        public int RaceSubrace { get; set; }
-        public BaseCharacterAbilities RaceTraitsAbilityScoreIncrease { get; set; }
+        public Abilities RaceTraitsAbilityScoreIncrease { get; set; }
         public float RaceTraitsAge { get; set; }
         public int RaceTraitsAlignment { get; set; }
-        public Enums.RaceSizes RaceTraitsSize { get; set; }
+        public RaceSizes RaceTraitsSize { get; set; }
         public int RaceTraitsSpeed { get; set; }
         public int RaceTraitsLanguages { get; set; }
 
 
-        public BaseCharacterRace() { }
+        public Races() { }
 
-        public BaseCharacterRace(string raceName, Enums.RaceTypes raceType, string raceDescription, int raceSubRace, BaseCharacterAbilities raceTraitsAbilityScoreIncrease, float raceTraitsAge, int raceTraitsAlignment, Enums.RaceSizes raceTraitsSize, int raceTraitsSpeed, int raceTraitsLanguages) {
-            RaceName = raceName;
-            RaceType = raceType;
+        public Races(RaceTypes raceType, string raceDescription, Abilities raceTraitsAbilityScoreIncrease, float raceTraitsAge, int raceTraitsAlignment, RaceSizes raceTraitsSize, int raceTraitsSpeed, int raceTraitsLanguages) {
+            Name = raceType;
             RaceDescription = raceDescription;
-            RaceSubrace = raceSubRace;
             RaceTraitsAbilityScoreIncrease = raceTraitsAbilityScoreIncrease;
             RaceTraitsAge = raceTraitsAge;
             RaceTraitsAlignment = raceTraitsAlignment;

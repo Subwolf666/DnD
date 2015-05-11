@@ -6,16 +6,16 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Base_Equipment {
-    public class ArmorType {
+    public class ArmorType : BaseEquipmentType {
 
-        public int ID { get; set; }
-        public string Name { get; set; }
+        //public int ID { get; set; }
+        //public string Name { get; set; }
         public string Description { get; set; }
-        public int Cost { get; set; }
+        //public int Cost { get; set; }
         public int ArmorClass { get; set; }
         public string Strength { get; set; }
         public string Stealth { get; set; }
-        public int Weight { get; set; }
+        //public int Weight { get; set; }
 
         public ArmorType() { }
 

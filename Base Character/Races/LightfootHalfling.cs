@@ -5,18 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Base_Character {
-    public class BaseCharacterRaceLightfootHalfling : BaseCharacterRace {
-        public BaseCharacterRaceLightfootHalfling() {
+    public class LightfootHalfling : Races {
+        public LightfootHalfling() {
 
-            RaceType = Enums.RaceTypes.LIGHTFOOTHALFLINGS;
-            RaceName = CharacterStrings.RaceTypeText[(int)RaceType];
-            RaceDescription = CharacterStrings.RaceDescriptionTextLightfootHalfling;
-            RaceSubrace = 2;
-            // Racial Traits
+            Name = RaceTypes.Lightfoothalflings;
+            RaceDescription = StringFunctions.RaceDescriptionTextLightfootHalfling;
             RaceTraitsAbilityScoreIncrease = new RaceAbilityScoreIncreaseLightfootHalfling();
             RaceTraitsAge = 18.0f;
             RaceTraitsAlignment = 2;    // Lawfull
-            RaceTraitsSize = Enums.RaceSizes.SMALL;
+            RaceTraitsSize = RaceSizes.SMALL;
             RaceTraitsSpeed = 25;       // feet
             RaceTraitsLanguages = 1;
             // Naturally Stealthy. You can attempt to hide even

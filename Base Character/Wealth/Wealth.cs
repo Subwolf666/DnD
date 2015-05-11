@@ -36,20 +36,20 @@ namespace Base_Character {
 
         }
 
-        public CharacterMoney StartingWealthClass(Enums.ClassTypes classType) {
+        public static CharacterMoney StartingWealthClass(Base_Character.ClassTypes classType) {
             CharacterMoney funds = new CharacterMoney();
 
             switch (classType) {
-                case Enums.ClassTypes.CLERIC:
+                case Base_Character.ClassTypes.Cleric:
                     funds.Copper = StartingWealthCleric();
                     break;
-                case Enums.ClassTypes.FIGHTER:
+                case Base_Character.ClassTypes.Fighter:
                     funds.Copper = StartingWealthFighter();
                     break;
-                case Enums.ClassTypes.ROGUE:
+                case Base_Character.ClassTypes.Rogue:
                     funds.Copper = StartingWealthRogue();
                     break;
-                case Enums.ClassTypes.WIZARD:
+                case Base_Character.ClassTypes.Wizard:
                     funds.Copper = StartingWealthWizard();
                     break;
                 default:
@@ -60,25 +60,25 @@ namespace Base_Character {
             return funds;
         }
 
-        private int StartingWealthCleric() {
+        private static int StartingWealthCleric() {
             // Funds: 5D4 x 10 GP
             int funds = (20 * 10) * 100;
             return funds;
         }
 
-        private int StartingWealthFighter() {
+        private static int StartingWealthFighter() {
             // Funds: 5D4 x 10 GP
             int funds = (20 * 10) * 100;
             return funds;
         }
 
-        private int StartingWealthRogue() {
+        private static int StartingWealthRogue() {
             // Funds: 4D4 x 10 GP
             int funds = (16 * 10) * 100;
             return funds;
         }
 
-        private int StartingWealthWizard() {
+        private static int StartingWealthWizard() {
             // Funds: 4D4 x 10 GP
             int funds = (16 * 10) * 100;
             return funds;

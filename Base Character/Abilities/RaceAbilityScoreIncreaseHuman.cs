@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Base_Character {
-    public class RaceAbilityScoreIncreaseHuman : BaseCharacterAbilities {
+    public class RaceAbilityScoreIncreaseHuman : Abilities {
         public RaceAbilityScoreIncreaseHuman() {
             Strength = 1;
             Dexterity = 1;

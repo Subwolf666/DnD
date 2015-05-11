@@ -24,10 +24,10 @@ namespace Base_Character {
             EquipedWeaponRightHand = equipedWeaponRightHand;
         }
 
-        public Equiped EquipWeaponsAndArmor(BaseCharacterClass Class) { // By Class
+        public Equiped EquipWeaponsAndArmor(Classes Class) { // By Class
 
             // 
-            BaseCharacterClass newClass = new BaseCharacterClass();
+            Classes newClass = new Classes();
             var allarmor = new Armor().PopulateArmor();
 
             foreach (Base_Equipment.Enums.ArmorTypes armort in Class.ClassFeaturesProficienciesArmor) {

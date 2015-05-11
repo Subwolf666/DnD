@@ -5,17 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Base_Character {
-    public class BaseProficiencyClassBonus {
+    public class ProficiencyClassBonus {
 
         public int Level { get; set; }
         public int ProficiencyBonus { get; set; }
-        public Enums.FeatureTypes[] Features { get; set; }
+        public FeatureTypes[] Features { get; set; }
         public int CantripsKnown { get; set; }
         public int[] SpellSlotsPerSpellLevel { get; set; }
         
-        public BaseProficiencyClassBonus() { }
+        public ProficiencyClassBonus() { }
 
-        public BaseProficiencyClassBonus(int level, int proficiencyBonus, Enums.FeatureTypes[] features, int cantripsKnown, int[] spellSlotsPerSpellLevel) {
+        public ProficiencyClassBonus(int level, int proficiencyBonus, FeatureTypes[] features, int cantripsKnown, int[] spellSlotsPerSpellLevel) {
             Level = level;
             ProficiencyBonus = proficiencyBonus;
             Features = features;

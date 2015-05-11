@@ -11,15 +11,11 @@ using Utilities;
 
 namespace CreateCharacter {
     public class RaceSelection {
-        public BaseCharacterRace DisplayRaceSelection() {
+        public static Races DisplayRaceSelection() {
 
-            ConsoleKey response; // Creates a variable to hold the user's return response.
             ConsoleKeyInfo keyPress; // Creates a variable to hold the user's return response.
-            Console.TreatControlCAsInput = true;    // Prevent program from ending if CTL+C is pressed.
+            Races characterRace = new Races();
             bool bDontExitLoop = true;
-            
-            BaseCharacterRace characterRace = new BaseCharacterRace();
-            Misc.Miscellaneous misc = new Misc.Miscellaneous();
 
             do {
                 Console.Clear();
@@ -28,42 +24,42 @@ namespace CreateCharacter {
                 Console.WriteLine("Choose a Race for your Character:");
                 Console.WriteLine();
 
-                for (int i = 0; i < CharacterStrings.RaceTypeText.Count; i++) { // Display the different races
+                for (int i = 0; i < StringFunctions.RaceTypeText.Count - 1; i++) {
 
-                    Console.WriteLine("[" + (i + 1).ToString() + "]" + " - " + CharacterStrings.RaceTypeText[i]);
+                    Console.WriteLine("[" + (i + 1).ToString() + "]" + " - " + StringFunctions.RaceTypeText[i + 1]);
                 }
                 Console.WriteLine();
-                Console.WriteLine("[0] - Exit.");
-                Console.WriteLine();
 
-                keyPress = misc.GetNumberRange(0, CharacterStrings.RaceTypeText.Count);
-                Console.Write("Are you sure? [Y/N]: "); // Asks the user to answer with Yes or No.
-                response = misc.GetYOrN();
-                if (response == ConsoleKey.Y) Console.WriteLine("Yes");
-                else if (response == ConsoleKey.N) Console.WriteLine("No");
-                if (response == ConsoleKey.Y) {
-                    if (keyPress.Key == ConsoleKey.D0) {
-                        characterRace = null;   // return an empty race
-                    } else if (keyPress.Key == ConsoleKey.D1) {
-                        characterRace = new BaseCharacterRaceHuman();
-                    } else if (keyPress.Key == ConsoleKey.D2) {
-                        characterRace = new BaseCharacterRaceHillDwarf();
-                    } else if (keyPress.Key == ConsoleKey.D3) {
-                        characterRace = new BaseCharacterRaceMountainDwarf();
-                    } else if (keyPress.Key == ConsoleKey.D4) {
-                        characterRace = new BaseCharacterRaceHighElf();
-                    } else if (keyPress.Key == ConsoleKey.D5) {
-                        characterRace = new BaseCharacterRaceWoodElf();
-                    } else if (keyPress.Key == ConsoleKey.D6) {
-                        characterRace = new BaseCharacterRaceLightfootHalfling();
-                    } else if (keyPress.Key == ConsoleKey.D7) {
-                        characterRace = new BaseCharacterRaceStoutHalfling();
-                    }
-                    bDontExitLoop = false;
+                keyPress = Miscellaneous.GetNumberRange(1, StringFunctions.RaceTypeText.Count - 1);
+                if (keyPress.Key == ConsoleKey.D1) {
+                    characterRace = new Human();
+                } else if (keyPress.Key == ConsoleKey.D2) {
+                    characterRace = new HillDwarf();
+                } else if (keyPress.Key == ConsoleKey.D3) {
+                    characterRace = new MountainDwarf();
+                } else if (keyPress.Key == ConsoleKey.D4) {
+                    characterRace = new HighElf();
+                } else if (keyPress.Key == ConsoleKey.D5) {
+                    characterRace = new WoodElf();
+                } else if (keyPress.Key == ConsoleKey.D6) {
+                    characterRace = new LightfootHalfling();
+                } else if (keyPress.Key == ConsoleKey.D7) {
+                    characterRace = new StoutHalfling();
                 }
+                bDontExitLoop = false;
             } while (bDontExitLoop);
 
             return characterRace;
         }
     }
 }
+//Console.WriteLine("[0] - Exit.");
+//Console.WriteLine();
+//                Console.Write("Are you sure? [Y/N]: "); // Asks the user to answer with Yes or No.
+//                response = misc.GetYOrN();
+//                if (response == ConsoleKey.Y) Console.WriteLine("Yes");
+//                else if (response == ConsoleKey.N) Console.WriteLine("No");
+//                if (response == ConsoleKey.Y) {
+//if (keyPress.Key == ConsoleKey.D0) {
+//    characterRace.Name = RaceTypes.Invalid;   // return an invalid race
+//} else 

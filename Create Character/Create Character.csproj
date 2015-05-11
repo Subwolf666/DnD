@@ -45,7 +45,7 @@
     <Compile Include="CreateCharacter.cs" />
     <Compile Include="HeightAndWeightSelection.cs" />
     <Compile Include="ProficienciesSkillsSelection.cs" />
-    <Compile Include="SexSelection.cs" />
+    <Compile Include="GenderSelection.cs" />
     <Compile Include="NameSelection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

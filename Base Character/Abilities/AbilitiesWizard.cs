@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Base_Character {
-    public class BaseCharacterAbilitiesFighter : BaseCharacterAbilities {
-        public BaseCharacterAbilitiesFighter() {
+    public class AbilitiesWizard : Abilities {
+        public AbilitiesWizard() {
 
-            Strength = 15;
+            Strength = 8;
             Dexterity = 10;
-            Constitution = 14;
-            Intelligence = 8;
+            Constitution = 12;
+            Intelligence = 15;
             Wisdom = 13;
             Charisma = 12;
         }

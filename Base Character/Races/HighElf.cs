@@ -5,18 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Base_Character {
-    public class BaseCharacterRaceHighElf : BaseCharacterRace {
-        public BaseCharacterRaceHighElf() {
+    public class HighElf : Races {
+        public HighElf() {
 
-            RaceType = Enums.RaceTypes.HIGHELVES;
-            RaceName = CharacterStrings.RaceTypeText[(int)RaceType];
-            RaceDescription = CharacterStrings.RaceDescriptionTextHighElves;
-            RaceSubrace = 2;
+            Name = RaceTypes.Highelves;
+            RaceDescription = StringFunctions.RaceDescriptionTextHighElves;
             RaceTraitsAbilityScoreIncrease = new  RaceAbilityScoreIncreaseHighElf();
-            RaceTraitsAbilityScoreIncrease.Intelligence = 1;
             RaceTraitsAge = 100.0f;
             RaceTraitsAlignment = 2;    // Lawfull
-            RaceTraitsSize = Enums.RaceSizes.MEDIUM;
+            RaceTraitsSize = RaceSizes.MEDIUM;
             RaceTraitsSpeed = 30;       // 30 feet
             RaceTraitsLanguages = 2;
 

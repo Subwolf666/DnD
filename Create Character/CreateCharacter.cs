@@ -10,99 +10,82 @@ using Base_Equipment;
 namespace CreateCharacter {
     public class CreateNewCharacter : BaseCharacterSheet {
         private enum createCharacterStates {
+            CHOOSELEVEL,
             CHOOSERACE,
             CHOOSECLASS,
-            CHOOSEHEIGHTANDWEIGHT,
             CHOOSEABILITIES,
+//            CHOOSESKILLS,           // Not implemented
+//            SELECTFEATS,            // Not implemented
+            CHOOSEHEIGHTANDWEIGHT,
             CALCULATEMAXIMUMHITPOINTS,
             CHOOSENAME,
-            CHOOSESEX,                        
+            CHOOSEGENDER,
             MONEY,
             EQUIPINGARMORANDWEAPONS,
             DONE
         }
 
-        public BaseCharacterSheet CreateANewCharacter() {
+        public static BaseCharacterSheet CreateANewCharacter() {
 
             bool bDontExitLoop = true;
             bool bExit = false;
-            ClassSelection displayClass = new ClassSelection();
-            RaceSelection displayRace = new RaceSelection();
-            HeightAndWeightSelection displayHeightAndWeight = new HeightAndWeightSelection();
-            AbilitiesSelection displayAbilities = new AbilitiesSelection();
-            NameSelection displayName = new NameSelection();
-            SexSelection displaySex = new SexSelection();
             BaseCharacterSheet baseCharacter = new BaseCharacterSheet();
-            CharacterFormulas characterFormulas = new CharacterFormulas();
-            Wealth wealthInCP = new Wealth();   // 100 cp = 1 gp
 
-            createCharacterStates currentState = createCharacterStates.CHOOSERACE;
+            createCharacterStates currentState = createCharacterStates.EQUIPINGARMORANDWEAPONS;// CHOOSELEVEL;
             createCharacterStates nextState = createCharacterStates.DONE;
 
-            Console.TreatControlCAsInput = true;        // Prevent program from ending if CTL+C is pressed.
             do {
                 switch (currentState) {
+                    case createCharacterStates.CHOOSELEVEL:
+                        baseCharacter.CharacterLevel = 1;
+                        nextState = createCharacterStates.CHOOSERACE;
+                        break;
                     case createCharacterStates.CHOOSERACE:
-                        baseCharacter.CharacterRace = displayRace.DisplayRaceSelection();
-                        if (baseCharacter.CharacterRace == null) {
-                            bExit = true;
-                        }
+                        baseCharacter.CharacterRace = RaceSelection.DisplayRaceSelection();
                         nextState = createCharacterStates.CHOOSECLASS;
                         break;
                     case createCharacterStates.CHOOSECLASS:
-                        baseCharacter.CharacterClass = displayClass.DisplayClassSelection();
-                        if (baseCharacter.CharacterClass == null) {
-                            bExit = true;
-                        }
-                        baseCharacter.CharacterProficiencyBonus = baseCharacter.CharacterClass.ProficiencyClassBonus[0].ProficiencyBonus; // First level character always has PB = 2. 
-                        nextState = createCharacterStates.CHOOSEHEIGHTANDWEIGHT;
-                        break;
-                    case createCharacterStates.CHOOSEHEIGHTANDWEIGHT:
-                        //baseCharacter.CharacterBaseHeightAndWeight = displayHeightAndWeight.GetHeightAndWeightForSelectedRace(baseCharacter.CharacterRace);
-                        baseCharacter.CharacterHeightAndWeight = displayHeightAndWeight.DisplayHeightAndWeightSelection(baseCharacter.CharacterRace);
-                        if (baseCharacter.CharacterHeightAndWeight == null) {
-                            bExit = true;
-                        }
+                        baseCharacter.CharacterClass = ClassSelection.DisplayClassSelection();
+                        baseCharacter.CharacterProficiencyBonus = 2; // baseCharacter.CharacterClass.ProficiencyClassBonus[0].ProficiencyBonus; // First level character always has PB = 2. 
                         nextState = createCharacterStates.CHOOSEABILITIES;
                         break;
                     case createCharacterStates.CHOOSEABILITIES:
-                        baseCharacter.CharacterAbilityScores = displayAbilities.DisplayAbilitiesSelection(baseCharacter);
-                        baseCharacter.CharacterAbilityModifiers = displayAbilities.GetBaseAbilityModifiersForselectedClass(baseCharacter.CharacterAbilityScores);
-                        if (baseCharacter.CharacterAbilityScores == null) {
-                            bExit = true;
-                        }
+                        baseCharacter.CharacterAbilityScores = AbilitiesSelection.DisplayAbilitiesSelection(baseCharacter.CharacterClass.Name, baseCharacter.CharacterRace);
+                        baseCharacter.CharacterAbilityModifiers = AbilitiesSelection.GetBaseAbilityModifiersForselectedClass(baseCharacter.CharacterAbilityScores);
+                        nextState = createCharacterStates.CHOOSEHEIGHTANDWEIGHT;
+                        break;
+                    case createCharacterStates.CHOOSEHEIGHTANDWEIGHT:
+                        baseCharacter.CharacterHeightAndWeight = HeightAndWeightSelection.DisplayHeightAndWeightSelection(baseCharacter.CharacterRace);
                         nextState = createCharacterStates.CALCULATEMAXIMUMHITPOINTS;
                         break;
                     case createCharacterStates.CALCULATEMAXIMUMHITPOINTS:
-                        baseCharacter.CharacterMaximumHitPoints = characterFormulas.CalcMaximumHitPoints(baseCharacter);
+                        baseCharacter.CharacterMaximumHitPoints = CharacterFormulas.CalcMaximumHitPoints(baseCharacter.CharacterClass.ClassFeaturesHitPointsHitDice, baseCharacter.CharacterLevel, baseCharacter.CharacterAbilityModifiers.Constitution);
                         baseCharacter.CharacterCurrentHitPoints = baseCharacter.CharacterMaximumHitPoints;
                         nextState = createCharacterStates.CHOOSENAME;
                         break;
                     case createCharacterStates.CHOOSENAME:
-                        baseCharacter.CharacterName = displayName.DisplayNameSelection();
-                        if (baseCharacter.CharacterName == null) {
-                            bExit = true;
-                        }
-                        nextState = createCharacterStates.CHOOSESEX;
+                        baseCharacter.CharacterName = NameSelection.DisplayNameSelection();
+                        nextState = createCharacterStates.CHOOSEGENDER;
                         break;
-                    case createCharacterStates.CHOOSESEX:
-                        baseCharacter.CharacterSex = displaySex.DisplaySexSelection();
-                        if (baseCharacter.CharacterSex == null) {
-                            bExit = true;
-                        }
+                    case createCharacterStates.CHOOSEGENDER:
+                        baseCharacter.Gender = GenderSelection.DisplayGenderSelection();
                         nextState = createCharacterStates.MONEY;
                         break;
                     case createCharacterStates.MONEY:    // Base Equipment
-                        baseCharacter.CharacterGold = wealthInCP.StartingWealthClass(baseCharacter.CharacterClass.ClassType);
+                        baseCharacter.CharacterGold = Wealth.StartingWealthClass(baseCharacter.CharacterClass.Name);
                         nextState = createCharacterStates.EQUIPINGARMORANDWEAPONS;
                         break;
                     case createCharacterStates.EQUIPINGARMORANDWEAPONS:
-                        var kut = new Equiped();
-                        baseCharacter.CharacterEquipedArmorNWeapons = kut.EquipWeaponsAndArmor(baseCharacter.CharacterClass);
+                        //Armor testArmor = new Armor();
+//                        List<BaseEquipmentType> Inventory = new List<BaseEquipmentType>();
+                        Inventory inventory = new Inventory(12);
+                        inventory.AddItem(new ArmorType((int)Enums.LightArmorTypes.LIGHTARMOR_ID_STUDDEDLEATHER, "Padded", " Made from tough but flexible leather, studded leather is reinforced with close-set rivets or spikes.", 4500, 11, null, null, 13));
+                        //baseCharacter.EquipedArmor = kutje[(int)Enums.HeavyArmorTypes.HEAVYARMOR_ID_PLATE - 1].ArmorTypes[(int)Enums.HeavyArmorTypes.HEAVYARMOR_ID_PLATE - 1];
+
+
                         nextState = createCharacterStates.DONE;
                         break;
                     case createCharacterStates.DONE:
-                        baseCharacter.CharacterLevel = 1;   // starting level for new character
                         bDontExitLoop = false;
                         break;
                     default:

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Base_Character {
-    public class RaceAbilityScoreIncreaseLightfootHalfling : BaseCharacterAbilities {
+    public class RaceAbilityScoreIncreaseLightfootHalfling : Abilities {
         public RaceAbilityScoreIncreaseLightfootHalfling() {
             Strength = 0;
             Dexterity = 2;

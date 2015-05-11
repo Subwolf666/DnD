@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Utilities {
     public class DiceBag {
-        public Dice Dices { get; set; }
-        public int Multiplier { get; set; }
+        //public Dice Dices { get; set; }
+        //public int Multiplier { get; set; }
         public enum Dice : uint {
             /// <summary>
             /// This is just a 1, no dice thrown
@@ -72,7 +72,7 @@ namespace Utilities {
 
         private static Random _rng = new Random();
 
-        //public DiceBag() {
+        public DiceBag() { }
         //    _rng = new Random();
         //}
 

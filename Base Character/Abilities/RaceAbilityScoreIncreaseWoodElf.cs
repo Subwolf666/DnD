@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Base_Character {
-    public class RaceAbilityScoreIncreaseWoodElf : BaseCharacterAbilities {
+    public class RaceAbilityScoreIncreaseWoodElf : Abilities {
         public RaceAbilityScoreIncreaseWoodElf() {
             Strength = 0;
             Dexterity = 2;

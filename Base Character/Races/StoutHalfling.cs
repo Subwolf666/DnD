@@ -5,18 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Base_Character {
-    public class BaseCharacterRaceStoutHalfling : BaseCharacterRace {
-        public BaseCharacterRaceStoutHalfling() {
+    public class StoutHalfling : Races {
+        public StoutHalfling() {
 
-            RaceType = Enums.RaceTypes.STOUTHALFLINGS;
-            RaceName = CharacterStrings.RaceTypeText[(int)RaceType];
-            RaceDescription = CharacterStrings.RaceDescriptionTextStoutHalfling;
-            RaceSubrace = 2;
-            // Racial Traits
+            Name = RaceTypes.Stouthalflings;
+            RaceDescription = StringFunctions.RaceDescriptionTextStoutHalfling;
             RaceTraitsAbilityScoreIncrease = new RaceAbilityScoreIncreaseStoutHalfling();
             RaceTraitsAge = 18.0f;
             RaceTraitsAlignment = 2;    // Lawfull
-            RaceTraitsSize = Enums.RaceSizes.MEDIUM;
+            RaceTraitsSize = RaceSizes.MEDIUM;
             RaceTraitsSpeed = 25;       // feet
             RaceTraitsLanguages = 1;
             // Stout Resilience. You have advantage on saving

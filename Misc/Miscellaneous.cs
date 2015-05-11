@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Misc {
     public class Miscellaneous {
 
-        public ConsoleKey GetCharInput() {
+        public static ConsoleKey GetCharInput() {
             ConsoleKey response;    // Creates a variable to hold the user's response.
             do {
                 while (Console.KeyAvailable) // Flushes the input queue.
@@ -21,12 +21,11 @@ namespace Misc {
             return response;
         }
 
-        public ConsoleKeyInfo GetNumberRange(int lowNumber, int highNumber) {
+        public static ConsoleKeyInfo GetNumberRange(int lowNumber, int highNumber) {
             ConsoleKeyInfo response;    // Creates a variable to hold the user's response.
             int iKeyPressed;
             bool bKeyPressed;
 
-//            Console.Write("Choose a number [{0}, {1}]: ", lowNumber, highNumber);
             do {
                 while (Console.KeyAvailable) // Flushes the input queue.
                     Console.ReadKey();
@@ -44,7 +43,7 @@ namespace Misc {
             return response;
         }
 
-        public ConsoleKey GetYOrN() {
+        public static ConsoleKey GetYOrN() {
 
             ConsoleKey response;    // Creates a variable to hold the user's response.
             //Console.Write("Are you sure? [Y/N]: "); // Asks the user to answer with Yes or No.

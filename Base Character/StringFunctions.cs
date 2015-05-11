@@ -6,17 +6,19 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Base_Character {
-    public static class CharacterStrings {
+    public static class StringFunctions {
 
-        public static readonly ReadOnlyCollection<string> RaceSexText = new ReadOnlyCollection<string>(
+        public static readonly ReadOnlyCollection<string> RaceGenderText = new ReadOnlyCollection<string>(
             new string[] {
+                "Invalid",
                 "Female",
-                "Male"
+                "Male",
             }
         );
 
         public static readonly ReadOnlyCollection<string> RaceTypeText = new ReadOnlyCollection<string>(
             new string[] {
+                "Invalid",
                 "Humans",
                 "Hill Dwarves",
                 "Mountain Dwarves",
@@ -29,6 +31,7 @@ namespace Base_Character {
 
         public static readonly ReadOnlyCollection<string> ClassTypeText = new ReadOnlyCollection<string>(
             new string[] {
+                "Invalid",
                 "Cleric",
                 "Fighter",
                 "Rogue",

@@ -39,24 +39,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abilities\AbilityScoresAndModifiers.cs" />
-    <Compile Include="Abilities\BaseCharacterAbilities.cs" />
-    <Compile Include="Abilities\BaseCharacterAbilitiesCleric.cs" />
-    <Compile Include="Abilities\BaseCharacterAbilitiesFighter.cs" />
-    <Compile Include="Abilities\BaseCharacterAbilitiesRogue.cs" />
-    <Compile Include="Abilities\BaseCharacterAbilitiesWizard.cs" />
+    <Compile Include="Abilities\Abilities.cs" />
+    <Compile Include="Abilities\AbilitiesCleric.cs" />
+    <Compile Include="Abilities\AbilitiesFighter.cs" />
+    <Compile Include="Abilities\AbilitiesRogue.cs" />
+    <Compile Include="Abilities\AbilitiesWizard.cs" />
     <Compile Include="Enums\Enums.cs" />
-    <Compile Include="Equiped\Equiped.cs" />
     <Compile Include="Formulas\CharacterFormulas.cs" />
-    <Compile Include="CharacterStrings.cs" />
+    <Compile Include="StringFunctions.cs" />
     <Compile Include="Class Proficiency Bonus\ProficiencyClassBonusRogue..cs" />
     <Compile Include="Class Proficiency Bonus\ProficiencyClassBonusFighter.cs" />
-    <Compile Include="Classes\BaseCharacterClass.cs" />
-    <Compile Include="Classes\BaseCharacterClassCleric.cs" />
-    <Compile Include="Classes\BaseCharacterClassFighter.cs" />
-    <Compile Include="Classes\BaseCharacterClassRogue.cs" />
-    <Compile Include="Classes\BaseCharacterClassWizard.cs" />
-    <Compile Include="Class Proficiency Bonus\BaseProficiencyClassBonus.cs" />
+    <Compile Include="Classes\Classes.cs" />
+    <Compile Include="Classes\Cleric.cs" />
+    <Compile Include="Classes\Fighter.cs" />
+    <Compile Include="Classes\Rogue.cs" />
+    <Compile Include="Classes\Wizard.cs" />
+    <Compile Include="Class Proficiency Bonus\ProficiencyClassBonus.cs" />
     <Compile Include="Class Proficiency Bonus\ProficiencyClassBonusWizard.cs" />
     <Compile Include="Class Proficiency Bonus\ProficiencyClassBonusCleric.cs" />
     <Compile Include="Details\BaseHeightAndWeight.cs" />
@@ -69,14 +67,14 @@
     <Compile Include="Details\BaseHeightAndWeightWoodElf.cs" />
     <Compile Include="Details\CharacterDetailsFunctions.cs" />
     <Compile Include="Details\Wealth.cs" />
-    <Compile Include="Races\BaseCharacterRace.cs" />
-    <Compile Include="Races\BaseCharacterRaceHighElf.cs" />
-    <Compile Include="Races\BaseCharacterRaceHillDwarf.cs" />
-    <Compile Include="Races\BaseCharacterRaceHuman.cs" />
-    <Compile Include="Races\BaseCharacterRaceLightfootHalfling.cs" />
-    <Compile Include="Races\BaseCharacterRaceMountainDwarf.cs" />
-    <Compile Include="Races\BaseCharacterRaceStoutHalfling.cs" />
-    <Compile Include="Races\BaseCharacterRaceWoodElf.cs" />
+    <Compile Include="Races\Races.cs" />
+    <Compile Include="Races\HighElf.cs" />
+    <Compile Include="Races\HillDwarf.cs" />
+    <Compile Include="Races\Human.cs" />
+    <Compile Include="Races\LightfootHalfling.cs" />
+    <Compile Include="Races\MountainDwarf.cs" />
+    <Compile Include="Races\StoutHalfling.cs" />
+    <Compile Include="Races\WoodElf.cs" />
     <Compile Include="BaseCharacterSheet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Abilities\RaceAbilityScoreIncreaseHighElf.cs" />
@@ -100,7 +98,9 @@
       <Name>Utilities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Equiped\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

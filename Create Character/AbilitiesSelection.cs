@@ -10,91 +10,52 @@ using Utilities;
 
 namespace CreateCharacter {
     public class AbilitiesSelection {
-        private int[] CharacterAbilityScores = new int[6] {
-            0, 0, 0, 0, 0, 0
-        };
-        private int[] RacialAbilityScores = new int[6] {
-            0, 0, 0, 0, 0, 0
-        };
-
-        public BaseCharacterAbilities DisplayAbilitiesSelection(BaseCharacterSheet character) {
+        public static Abilities DisplayAbilitiesSelection(Base_Character.ClassTypes classType, Base_Character.Races race) {
 
             ConsoleKeyInfo keyPress; // Creates a variable to hold the user's return response.
-            //Console.TreatControlCAsInput = true;    // Prevent program from ending if CTL+C is pressed.
             bool bDontExitLoop = true;
-            //int heightAndWeightModifier = 0;
 
-            BaseCharacterAbilities Abilities = new BaseCharacterAbilities();
-            BaseCharacterAbilities currentAbilityScore;
-            //BaseAbilities racialAbilitiesIncrease;
-
-            Abilities = currentAbilityScore = GetBaseAbilityScoresForSelectedClass(character.CharacterClass);
-
-            CreateAbilitiesScoreArray(Abilities); // nodig om de ability modifiers te maken
-            CreateRacialAbilitiesArray(character.CharacterRace.RaceTraitsAbilityScoreIncrease);
-
+            Abilities currentAbilityScore, baseAbilities;
+            currentAbilityScore = baseAbilities = GetBaseAbilityScoresForSelectedClass(classType);
+            Abilities racialAbilities = race.RaceTraitsAbilityScoreIncrease;
+            
             do {
                 Console.Clear();
                 Console.WriteLine("Class Abilities Selection:");
                 Console.WriteLine();
-                Console.WriteLine("Race: " + character.CharacterRace.RaceName);
-                Console.WriteLine("Class: " + character.CharacterClass.ClassName);
+                Console.WriteLine("Race: " + StringFunctions.RaceTypeText[(int)race.Name]);
+                Console.WriteLine("Class: " + StringFunctions.ClassTypeText[(int)classType]);
                 Console.WriteLine("==========================================");
-                // Display the different Abilities
-                Console.WriteLine("[#] - Ability: BaseAbility + RacialAbility + (AbilityModifier)");
-                for (int i = 0; i < CharacterStrings.AbilityNames.Count; i++) {
-                    Console.Write("[" + (i + 1).ToString() + "] -");
-                    Console.Write("{0,13}:", CharacterStrings.AbilityNames[i]);
-                    Console.Write("{0,3} + ", CharacterAbilityScores[i].ToString());
-                    Console.Write("{0,1} ", RacialAbilityScores[i].ToString());
-                    Console.WriteLine("({0,2})", AbilityScoresAndModifiers.DetermineAbilityScoreAndModifier((CharacterAbilityScores[i] + RacialAbilityScores[i])).ToString());
+                Console.WriteLine("[#] -      Ability: Base + Racial + (Modifier)");
+                for (int i = 0; i < StringFunctions.AbilityNames.Count; i++) {
+                    Console.Write("[" + (i + 1).ToString() +"] -");
+                    Console.Write("{0,13}: ", StringFunctions.AbilityNames[i]);
+                    Console.Write("{0,3}  +   ", baseAbilities.AbilitiesToInt()[i].ToString());
+                    Console.Write("{0,1}    + ", racialAbilities.AbilitiesToInt()[i].ToString());
+                    Console.WriteLine("   ({0,2})", CharacterFormulas.DetermineAbilityModifier(baseAbilities.AbilitiesToInt()[i] + racialAbilities.AbilitiesToInt()[i]).ToString());
                 }
                 Console.WriteLine();
-                Console.WriteLine("[R]eroll Ability Score. (NOT IMPLEMENTED YET)");
-                Console.WriteLine("[S]ave Current Height and Exit.");
-                Console.WriteLine("[0] - Exit");
+//                Console.WriteLine("[R]eroll Ability Score. (NOT IMPLEMENTED YET)");
+                Console.WriteLine("[S]ave Current Ability Score and Exit.");
                 Console.WriteLine();
                 
                 keyPress = Console.ReadKey(true);
-                if (keyPress.Key == ConsoleKey.D0) {
-                    currentAbilityScore = null;
-                    bDontExitLoop = false;
-                } else if (keyPress.Key == ConsoleKey.R) {
-                    // roll the dice and add to height
-                    //heightAndWeightModifier = Dice.Roll(HeightAndWeight.BaseHeightModifier);
-                    //Console.WriteLine();
-                    //Console.WriteLine("Answer: " + heightAndWeightModifier.ToString() + "\"");
-                    //currentHeightAndWeight.BaseHeightFeet = HeightAndWeight.BaseHeightFeet;
-                    //currentHeightAndWeight.BaseHeightInches = HeightAndWeight.BaseHeightInches + heightAndWeightModifier;
-                    //if (currentHeightAndWeight.BaseHeightInches > 12) {
-                    //    ++currentHeightAndWeight.BaseHeightFeet;
-                    //    currentHeightAndWeight.BaseHeightInches -= 12;
-                    //}
-                } else if (keyPress.Key == ConsoleKey.S) {
-                    currentAbilityScore.Strength = CharacterAbilityScores[0] + RacialAbilityScores[0];
-                    currentAbilityScore.Dexterity = CharacterAbilityScores[1] + RacialAbilityScores[1];
-                    currentAbilityScore.Constitution = CharacterAbilityScores[2] + RacialAbilityScores[2];
-                    currentAbilityScore.Intelligence = CharacterAbilityScores[3] + RacialAbilityScores[3];
-                    currentAbilityScore.Wisdom = CharacterAbilityScores[4] + RacialAbilityScores[4];
-                    currentAbilityScore.Charisma = CharacterAbilityScores[5] + RacialAbilityScores[5];
+//                if (keyPress.Key == ConsoleKey.R) {
+//                } else
+                if (keyPress.Key == ConsoleKey.S) {
+                    currentAbilityScore.Add(racialAbilities);
                     bDontExitLoop = false;
                 }
             } while (bDontExitLoop);
-
             return currentAbilityScore;
         }
 
-        public BaseCharacterAbilities GetBaseAbilityModifiersForselectedClass(BaseCharacterAbilities AbilityScores) {
-            BaseCharacterAbilities AbilityModifier = new BaseCharacterAbilities();
-
-            if (AbilityScores != null) {
-                CreateAbilitiesScoreArray(AbilityScores);
-                AbilityModifier.Strength = AbilityScoresAndModifiers.DetermineAbilityScoreAndModifier(AbilityScores.Strength);
-                AbilityModifier.Dexterity = AbilityScoresAndModifiers.DetermineAbilityScoreAndModifier(AbilityScores.Dexterity);
-                AbilityModifier.Constitution = AbilityScoresAndModifiers.DetermineAbilityScoreAndModifier(AbilityScores.Constitution);
-                AbilityModifier.Intelligence = AbilityScoresAndModifiers.DetermineAbilityScoreAndModifier(AbilityScores.Intelligence);
-                AbilityModifier.Wisdom = AbilityScoresAndModifiers.DetermineAbilityScoreAndModifier(AbilityScores.Wisdom);
-                AbilityModifier.Charisma = AbilityScoresAndModifiers.DetermineAbilityScoreAndModifier(AbilityScores.Charisma);
+        public static Abilities GetBaseAbilityModifiersForselectedClass(Abilities abilityScores) {
+            Abilities AbilityModifier = new Abilities();
+            int[] to_return = new int[abilityScores.AbilitiesToInt().Length];
+            if (abilityScores != null) {
+                to_return = CharacterFormulas.DetermineAbilityModifier(abilityScores.AbilitiesToInt());
+                AbilityModifier = new Abilities(to_return[0], to_return[1], to_return[2], to_return[3], to_return[4], to_return[5]);
             } else {
                 AbilityModifier = null;
             }
@@ -102,39 +63,23 @@ namespace CreateCharacter {
             return AbilityModifier;
         }
 
-        private BaseCharacterAbilities GetBaseAbilityScoresForSelectedClass(BaseCharacterClass characterClass) {
-            BaseCharacterAbilities temp;
-            if (characterClass.ClassType == Enums.ClassTypes.FIGHTER) {
-                temp = new BaseCharacterAbilitiesFighter();
-            } else if (characterClass.ClassType == Enums.ClassTypes.CLERIC) {
-                temp = new BaseCharacterAbilitiesCleric();
-            } else if (characterClass.ClassType == Enums.ClassTypes.ROGUE) {
-                temp = new BaseCharacterAbilitiesRogue();
-            } else if (characterClass.ClassType == Enums.ClassTypes.WIZARD) {
-                temp = new BaseCharacterAbilitiesWizard();
+        // My choice for now, later on this can be changed into rolling dice or whatever.
+        // http://home.earthlink.net/~duanevp/dnd/stat_generation.htm
+        private static Abilities GetBaseAbilityScoresForSelectedClass(Base_Character.ClassTypes classType) {
+            Abilities temp;
+            if (classType == Base_Character.ClassTypes.Fighter) {
+                temp = new AbilitiesFighter();
+            } else if (classType == Base_Character.ClassTypes.Cleric) {
+                temp = new AbilitiesCleric();
+            } else if (classType == Base_Character.ClassTypes.Rogue) {
+                temp = new AbilitiesRogue();
+            } else if (classType == Base_Character.ClassTypes.Wizard) {
+                temp = new AbilitiesWizard();
             } else {
-                temp = new BaseCharacterAbilitiesFighter();
+                temp = new AbilitiesFighter();
             }
 
             return temp;
-        }
-
-        private void CreateAbilitiesScoreArray(BaseCharacterAbilities Abilities) {
-            CharacterAbilityScores[0] = Abilities.Strength;
-            CharacterAbilityScores[1] = Abilities.Dexterity;
-            CharacterAbilityScores[2] = Abilities.Constitution;
-            CharacterAbilityScores[3] = Abilities.Intelligence;
-            CharacterAbilityScores[4] = Abilities.Wisdom;
-            CharacterAbilityScores[5] = Abilities.Charisma;
-        }
-        
-        private void CreateRacialAbilitiesArray(BaseCharacterAbilities Abilities) {
-            RacialAbilityScores[0] = Abilities.Strength;
-            RacialAbilityScores[1] = Abilities.Dexterity;
-            RacialAbilityScores[2] = Abilities.Constitution;
-            RacialAbilityScores[3] = Abilities.Intelligence;
-            RacialAbilityScores[4] = Abilities.Wisdom;
-            RacialAbilityScores[5] = Abilities.Charisma;
         }
     }
 }

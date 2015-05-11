@@ -5,17 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Base_Character {
-    public class BaseCharacterRaceWoodElf : BaseCharacterRace {
-        public BaseCharacterRaceWoodElf() {
+    public class WoodElf : Races {
+        public WoodElf() {
 
-            RaceType = Enums.RaceTypes.WOODELVES;
-            RaceName = CharacterStrings.RaceTypeText[(int)RaceType];
-            RaceDescription = CharacterStrings.RaceDescriptionTextWoodElf;
-            RaceSubrace = 2;
+            Name = RaceTypes.Woodelves;
+            RaceDescription = StringFunctions.RaceDescriptionTextWoodElf;
             RaceTraitsAbilityScoreIncrease = new RaceAbilityScoreIncreaseWoodElf();
             RaceTraitsAge = 100.0f;
             RaceTraitsAlignment = 2;    // Lawfull
-            RaceTraitsSize = Enums.RaceSizes.MEDIUM;
+            RaceTraitsSize = RaceSizes.MEDIUM;
             RaceTraitsSpeed = 35;       // 35 feet
             RaceTraitsLanguages = 1;
 
