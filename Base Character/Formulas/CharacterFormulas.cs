@@ -24,6 +24,25 @@ namespace Base_Character {
             return maximumHitPoints;
         }
 
+        // In: level
+        // Out: XP belonging to level
+        // Levels   XP
+        //      1   0
+        //      2   1000
+        //      3   3000
+        //      4   6000
+        //      5   10000
+        private static int ExperiencePoints(int level) {
+            return (500 * ((int)Math.Pow(level, 2)) - (500 * level));
+        }
+
+        public static int CurrentExperiencePoints(int level) {
+            return ExperiencePoints(level);
+        }
+        public static int NextExperiencePoints(int level) {
+            return ExperiencePoints(++level);
+        }
+
         public static int CalcArmorClass() {
             // Depending on the armor you wear, you might add some or all of your Dexterity modifier to your Armor Class, as described in chapter 5.
 

@@ -17,7 +17,7 @@ namespace CreateCharacter {
 //            CHOOSESKILLS,           // Not implemented
 //            SELECTFEATS,            // Not implemented
             CHOOSEHEIGHTANDWEIGHT,
-            CALCULATEMAXIMUMHITPOINTS,
+            GETCURRENTHITPOINTS,
             CHOOSENAME,
             CHOOSEGENDER,
             MONEY,
@@ -31,7 +31,7 @@ namespace CreateCharacter {
             bool bExit = false;
             BaseCharacterSheet baseCharacter = new BaseCharacterSheet();
 
-            createCharacterStates currentState = createCharacterStates.EQUIPINGARMORANDWEAPONS;// CHOOSELEVEL;
+            createCharacterStates currentState = createCharacterStates.CHOOSELEVEL;
             createCharacterStates nextState = createCharacterStates.DONE;
 
             do {
@@ -56,10 +56,9 @@ namespace CreateCharacter {
                         break;
                     case createCharacterStates.CHOOSEHEIGHTANDWEIGHT:
                         baseCharacter.CharacterHeightAndWeight = HeightAndWeightSelection.DisplayHeightAndWeightSelection(baseCharacter.CharacterRace);
-                        nextState = createCharacterStates.CALCULATEMAXIMUMHITPOINTS;
+                        nextState = createCharacterStates.GETCURRENTHITPOINTS;
                         break;
-                    case createCharacterStates.CALCULATEMAXIMUMHITPOINTS:
-                        baseCharacter.CharacterMaximumHitPoints = CharacterFormulas.CalcMaximumHitPoints(baseCharacter.CharacterClass.ClassFeaturesHitPointsHitDice, baseCharacter.CharacterLevel, baseCharacter.CharacterAbilityModifiers.Constitution);
+                    case createCharacterStates.GETCURRENTHITPOINTS:
                         baseCharacter.CharacterCurrentHitPoints = baseCharacter.CharacterMaximumHitPoints;
                         nextState = createCharacterStates.CHOOSENAME;
                         break;

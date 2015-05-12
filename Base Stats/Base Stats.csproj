@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B715D3F3-C216-4F32-8BA8-DF44185E933D}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{FD5E4513-5629-40F6-94D3-4FB728649BD5}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Create_Character</RootNamespace>
-    <AssemblyName>Create Character</AssemblyName>
+    <RootNamespace>Base_Stats</RootNamespace>
+    <AssemblyName>Base Stats</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,46 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassSelection.cs" />
-    <Compile Include="CreateCharacter.cs" />
-    <Compile Include="HeightAndWeightSelection.cs" />
-    <Compile Include="ProficienciesSkillsSelection.cs" />
-    <Compile Include="GenderSelection.cs" />
-    <Compile Include="NameSelection.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Abilities\Abilities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AbilitiesSelection.cs" />
-    <Compile Include="RaceSelection.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Base Character\Base Character.csproj">
-      <Project>{df8a976f-9673-4d56-9d95-627ddb0dfcee}</Project>
-      <Name>Base Character</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Base Equipment\Base Equipment.csproj">
-      <Project>{717a73ce-4345-4aa6-9e64-50a81f38e178}</Project>
-      <Name>Base Equipment</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Base Monsters\Base Monsters.csproj">
-      <Project>{e181926e-0d00-4221-8349-668734a9075f}</Project>
-      <Name>Base Monsters</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Base Stats\Base Stats.csproj">
-      <Project>{fd5e4513-5629-40f6-94d3-4fb728649bd5}</Project>
-      <Name>Base Stats</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Misc\Misc.csproj">
-      <Project>{d0c6c920-f722-40bc-abd6-a8806d791c31}</Project>
-      <Name>Misc</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Utilities\Utilities.csproj">
-      <Project>{9a6af086-7cdb-46d1-9a2e-f2f38e00344f}</Project>
-      <Name>Utilities</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Base_Character {
+namespace Base_Stats {
     public class Abilities {
         public int Strength { get; set; }
         public int Dexterity { get; set; }
@@ -29,13 +29,13 @@ namespace Base_Character {
             return to_return;
         }
 
-        public void Add(Abilities abilities2) {
-            Strength += abilities2.Strength;
-            Dexterity += abilities2.Dexterity;
-            Constitution += abilities2.Constitution;
-            Intelligence += abilities2.Intelligence;
-            Wisdom += abilities2.Wisdom;
-            Charisma += abilities2.Charisma;
+        public void Add(Abilities abilities) {
+            Strength += abilities.Strength;
+            Dexterity += abilities.Dexterity;
+            Constitution += abilities.Constitution;
+            Intelligence += abilities.Intelligence;
+            Wisdom += abilities.Wisdom;
+            Charisma += abilities.Charisma;
         }
     }
 }

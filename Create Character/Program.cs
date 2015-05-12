@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 using Base_Character;
 using Base_Equipment;
+using Base_Monsters;
+
 using Misc;
 
 namespace CreateCharacter
@@ -18,6 +20,7 @@ namespace CreateCharacter
             Console.TreatControlCAsInput = true;        // Prevent program from ending if CTL+C is pressed.
             BaseCharacterSheet newCharacter = new BaseCharacterSheet();
 
+            var hoer = Monsters.MonstersList;
             // Introduction of the game
             // Menu:
             //      Create Party
@@ -46,6 +49,11 @@ namespace CreateCharacter
                 Console.WriteLine("==========================================");
                 Console.WriteLine("Strength: " + newCharacter.CharacterAbilityScores.Strength.ToString() + " (" + newCharacter.CharacterAbilityModifiers.Strength.ToString() + ")");
                 Console.WriteLine("Dexterity: " + newCharacter.CharacterAbilityScores.Dexterity.ToString() + " (" + newCharacter.CharacterAbilityModifiers.Dexterity.ToString() + ")");
+                Console.WriteLine("Current XP: " + newCharacter.CharacterExperiencePoints.ToString());
+                Console.WriteLine("Next level: " + newCharacter.CharacterNextExperiencePoints.ToString());
+                Console.WriteLine("Maximum Hit Points: " + newCharacter.CharacterMaximumHitPoints.ToString());
+                Console.WriteLine("Current Hit Points: " + newCharacter.CharacterCurrentHitPoints.ToString());
+
                 //Console.WriteLine("Race Description: \n" + newCharacter.baseCharacter.CharacterRace.RaceDescription);
                 //Console.WriteLine("==========================================");
                 //Console.WriteLine("Class Description: \n" + newCharacter.baseCharacter.CharacterClass.ClassDescription);

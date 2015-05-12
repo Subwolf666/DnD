@@ -39,7 +39,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abilities\Abilities.cs" />
     <Compile Include="Abilities\AbilitiesCleric.cs" />
     <Compile Include="Abilities\AbilitiesFighter.cs" />
     <Compile Include="Abilities\AbilitiesRogue.cs" />
@@ -94,14 +93,16 @@
       <Project>{717a73ce-4345-4aa6-9e64-50a81f38e178}</Project>
       <Name>Base Equipment</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Base Stats\Base Stats.csproj">
+      <Project>{fd5e4513-5629-40f6-94d3-4fb728649bd5}</Project>
+      <Name>Base Stats</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Utilities\Utilities.csproj">
       <Project>{9a6af086-7cdb-46d1-9a2e-f2f38e00344f}</Project>
       <Name>Utilities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Equiped\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

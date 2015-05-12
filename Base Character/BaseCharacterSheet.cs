@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Base_Equipment;
+using Base_Stats;
 
 namespace Base_Character {
     public class BaseCharacterSheet {
@@ -15,7 +16,8 @@ namespace Base_Character {
         public Races CharacterRace { get; set; }                     // Character Race
         public Classes CharacterClass { get; set; }      // Character Class
         public int CharacterAlignment { get; set; }              // Character Alignment maybe an int
-        public int CharacterExperiencePoints { get; set; }          // Character Experience Points
+        public int CharacterExperiencePoints { get { return CharacterFormulas.CurrentExperiencePoints(CharacterLevel); } }          // Character Experience Points
+        public int CharacterNextExperiencePoints { get { return CharacterFormulas.NextExperiencePoints(CharacterLevel); } }
 
         public Abilities CharacterAbilityScores { get; set; }
         public Abilities CharacterAbilityModifiers { get; set; }
@@ -57,8 +59,10 @@ namespace Base_Character {
         //public int CharacterInitiative { get; set; }                // Character Initiative Points
         //public int CharacterSpeed { get; set; }                     // Character Speed
         ////
+        //public int CharacterCurrentHitPoints { get; set; }
         public int CharacterCurrentHitPoints { get; set; }
-        public int CharacterMaximumHitPoints { get; set; }
+        //public int CharacterMaximumHitPoints { get; set; }
+        public int CharacterMaximumHitPoints { get { return CharacterFormulas.CalcMaximumHitPoints(CharacterClass.ClassFeaturesHitPointsHitDice, CharacterLevel, CharacterAbilityModifiers.Constitution); } }
         //public int CharacterTemporaryHitPoints { get; set; }
         //public int CharacterHitDice { get; set; }                   // Hit Dice short for Hit Point Dice
         //// Death Saves

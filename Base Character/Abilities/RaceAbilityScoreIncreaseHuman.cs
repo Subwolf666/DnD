@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Base_Stats;
+
 namespace Base_Character {
     public class RaceAbilityScoreIncreaseHuman : Abilities {
         public RaceAbilityScoreIncreaseHuman() {
