@@ -98,6 +98,39 @@ namespace Base_Monsters {
         Soldier,
 
     }
+    public enum AttackPowers {
+        BullRush,
+        Grab,
+        MeleeBasicAttack,
+        OppertunityAttack,
+        RangedBasicAttack,
+    }
+    public enum AttackPowersType {
+        Melee,
+        Ranged,
+        Close,
+        Area,
+    }
+    public enum AttackPowersAction {
+        Standard,
+        Move,
+        Minor,
+        ImmediateInterrupt,
+        ImmediateReaction,
+        Free,
+        Sustain,
+    }
+    public enum AttackPowersRecharge {
+        AtWill,
+        Encounter,
+        Daily,
+        Recharge,
+        RechargesWhen,
+    }
+    public enum AttackPowersKeyword {
+
+    }
+    
     public enum SavingThrowEffect {
         None,
         AgainstFear,

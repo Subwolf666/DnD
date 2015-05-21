@@ -78,9 +78,9 @@ namespace Base_Monsters {
 // Action Points
         public int ActionPoints { get; set; }
 // Attack Powers
-        public int AP_Type { get; set; }
-        public int AP_Action { get; set; }
-        public int AP_Recharge { get; set; }
+        public AttackPowersType AP_Type { get; set; }
+        public AttackPowersAction AP_Action { get; set; }
+        public AttackPowersRecharge AP_Recharge { get; set; }
         public int AP_Keywords { get; set; }
         public int AP_Reach { get; set; }
         public int AP_RangeAreaOrTargets { get; set; }
